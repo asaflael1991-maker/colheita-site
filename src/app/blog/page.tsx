@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FadeInView from "@/components/FadeInView";
 
 export const metadata: Metadata = {
   title: "Notícias — Colheita",
@@ -22,34 +23,40 @@ export default function BlogPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-[1440px] px-6 py-20 lg:px-12 lg:py-28">
-        <h1 className="mb-4 text-3xl font-medium tracking-tight lg:text-5xl">
-          Acompanhe tudo o que Deus está fazendo.
-        </h1>
-        <p className="mb-4 max-w-2xl text-lg text-[#1d1d1b]/70">
-          Fique por dentro das novidades da Igreja Colheita: aqui você
-          acompanha tudo o que acontece em nossa comunidade.
-        </p>
-        <ul className="mb-12 flex flex-wrap gap-3">
-          {categorias.map((c) => (
-            <li
-              key={c}
-              className="rounded-full border border-[#1d1d1b]/15 px-4 py-2 text-sm text-[#1d1d1b]/70"
-            >
-              {c}
-            </li>
-          ))}
-        </ul>
+        <FadeInView>
+          <h1 className="mb-4 text-3xl font-medium tracking-tight lg:text-5xl">
+            Acompanhe tudo o que Deus está fazendo.
+          </h1>
+          <p className="mb-4 max-w-2xl text-lg text-[#1d1d1b]/70">
+            Fique por dentro das novidades da Igreja Colheita: aqui você
+            acompanha tudo o que acontece em nossa comunidade.
+          </p>
+          <ul className="mb-12 flex flex-wrap gap-3">
+            {categorias.map((c) => (
+              <li
+                key={c}
+                className="rounded-full border border-[#1d1d1b]/15 px-4 py-2 text-sm text-[#1d1d1b]/70"
+              >
+                {c}
+              </li>
+            ))}
+          </ul>
+        </FadeInView>
 
         {/* TODO: listar posts reais (de um CMS, arquivos MDX, etc.) */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map((n) => (
-            <article key={n} className="rounded-2xl border border-[#1d1d1b]/10 p-6">
+          {[1, 2, 3].map((n, i) => (
+            <FadeInView
+              key={n}
+              delay={i * 0.1}
+              className="rounded-2xl border border-[#1d1d1b]/10 p-6"
+            >
               <div className="mb-4 aspect-video rounded-lg bg-[#1d1d1b]/5" />
               <p className="mb-1 text-xs uppercase tracking-[0.2em] text-[#1d1d1b]/50">
                 Data a definir
               </p>
               <h2 className="font-medium">Título da notícia {n}</h2>
-            </article>
+            </FadeInView>
           ))}
         </div>
       </main>

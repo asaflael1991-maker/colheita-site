@@ -34,12 +34,14 @@ export default function GaleriaPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-[1440px] px-6 py-20 lg:px-12 lg:py-28">
-        <h1 className="mb-4 text-3xl font-medium tracking-tight lg:text-5xl">
-          Galeria de fotos
-        </h1>
-        <p className="mb-12 max-w-2xl text-[#1d1d1b]/60">
-          Momentos registrados em nossos cultos e encontros.
-        </p>
+        <FadeInView>
+          <h1 className="mb-4 text-3xl font-medium tracking-tight lg:text-5xl">
+            Galeria de fotos
+          </h1>
+          <p className="mb-12 max-w-2xl text-[#1d1d1b]/60">
+            Momentos registrados em nossos cultos e encontros.
+          </p>
+        </FadeInView>
 
         <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
           {photos.map((file, i) => (

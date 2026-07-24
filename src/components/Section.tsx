@@ -1,9 +1,15 @@
 import type { ReactNode } from "react";
+import FadeInView from "@/components/FadeInView";
 
 /**
  * Section — wrapper padrão pras seções da home.
  * `scroll-mt-36` compensa a altura do menu fixo (agora em duas linhas)
  * ao chegar via âncora.
+ *
+ * Todo o conteúdo (eyebrow + título + children) entra com fade + leve
+ * zoom assim que a seção aparece na tela (via FadeInView) — animação
+ * automática pra qualquer texto/imagem colocado dentro de uma Section,
+ * sem precisar animar cada uma manualmente.
  */
 export default function Section({
   id,
@@ -27,7 +33,7 @@ export default function Section({
         inverted ? "bg-[#1d1d1b] text-[#ffffff]" : "bg-[#ffffff] text-[#1d1d1b]"
       }`}
     >
-      <div className="mx-auto max-w-[1440px]">
+      <FadeInView className="mx-auto max-w-[1440px]">
         {eyebrow && (
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#f8a800]">
             {eyebrow}
@@ -37,7 +43,7 @@ export default function Section({
           {title}
         </h2>
         {children}
-      </div>
+      </FadeInView>
     </section>
   );
 }

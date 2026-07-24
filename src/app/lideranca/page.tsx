@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FadeInView from "@/components/FadeInView";
 
 export const metadata: Metadata = {
   title: "Liderança — Colheita",
@@ -84,19 +85,21 @@ export default function LiderancaPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-[1100px] px-6 py-20 lg:px-12 lg:py-28">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#1d1d1b]/50">
-          Liderança
-        </p>
-        <h1 className="mb-14 text-3xl font-medium tracking-tight lg:text-5xl">
-          Quem conduz a Igreja Colheita
-        </h1>
+        <FadeInView>
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#1d1d1b]/50">
+            Liderança
+          </p>
+          <h1 className="mb-14 text-3xl font-medium tracking-tight lg:text-5xl">
+            Quem conduz a Igreja Colheita
+          </h1>
+        </FadeInView>
 
         <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
           Pastores principais
         </h2>
         <div className="mb-16 grid gap-10 md:grid-cols-2">
-          {pastoresPrincipais.map((p) => (
-            <div key={p.nome}>
+          {pastoresPrincipais.map((p, i) => (
+            <FadeInView key={p.nome} delay={i * 0.1}>
               <div className="relative mb-4 aspect-square overflow-hidden rounded-2xl bg-[#1d1d1b]/5">
                 {p.foto && (
                   <Image
@@ -111,7 +114,7 @@ export default function LiderancaPage() {
               <h3 className="font-medium">{p.nome}</h3>
               <p className="mb-2 text-sm text-[#1d1d1b]/50">{p.cargo}</p>
               <p className="text-[#1d1d1b]/70">{p.bio}</p>
-            </div>
+            </FadeInView>
           ))}
         </div>
 
@@ -119,8 +122,8 @@ export default function LiderancaPage() {
           Equipe pastoral
         </h2>
         <div className="mb-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {equipePastoral.map((p) => (
-            <div key={p.nome}>
+          {equipePastoral.map((p, i) => (
+            <FadeInView key={p.nome} delay={(i % 3) * 0.1}>
               <div className="relative mb-3 aspect-square overflow-hidden rounded-2xl bg-[#1d1d1b]/5">
                 {p.foto && (
                   <Image
@@ -134,7 +137,7 @@ export default function LiderancaPage() {
               </div>
               <h3 className="font-medium">{p.nome}</h3>
               <p className="text-sm text-[#1d1d1b]/60">{p.bio}</p>
-            </div>
+            </FadeInView>
           ))}
         </div>
 
@@ -142,14 +145,14 @@ export default function LiderancaPage() {
           Líderes de ministérios
         </h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {liderancaMinisterios.map((l) => (
-            <div key={l.ministerio}>
+          {liderancaMinisterios.map((l, i) => (
+            <FadeInView key={l.ministerio} delay={(i % 3) * 0.1}>
               {/* PLACEHOLDER: foto dos líderes de {l.ministerio} */}
               <div className="mb-3 aspect-square rounded-2xl bg-[#1d1d1b]/5" />
               <h3 className="font-medium">{l.ministerio}</h3>
               <p className="mb-1 text-sm text-[#1d1d1b]/50">{l.lideres}</p>
               <p className="text-sm text-[#1d1d1b]/60">{l.bio}</p>
-            </div>
+            </FadeInView>
           ))}
         </div>
       </main>

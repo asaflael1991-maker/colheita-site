@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FadeInView from "@/components/FadeInView";
 
 export const metadata: Metadata = {
   title: "Ministérios — Colheita",
@@ -138,17 +139,20 @@ export default function MinisteriosPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-[1200px] px-6 py-20 lg:px-12 lg:py-28">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#1d1d1b]/50">
-          Ministérios
-        </p>
-        <h1 className="mb-14 text-3xl font-medium tracking-tight lg:text-5xl">
-          Onde você pode servir e crescer
-        </h1>
+        <FadeInView>
+          <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#1d1d1b]/50">
+            Ministérios
+          </p>
+          <h1 className="mb-14 text-3xl font-medium tracking-tight lg:text-5xl">
+            Onde você pode servir e crescer
+          </h1>
+        </FadeInView>
 
         <div className="grid gap-10 sm:grid-cols-2">
-          {ministerios.map((m) => (
-            <div
+          {ministerios.map((m, i) => (
+            <FadeInView
               key={m.nome}
+              delay={(i % 2) * 0.1}
               className="rounded-2xl border border-[#1d1d1b]/10 p-6"
             >
               <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-[#1d1d1b]/5">
@@ -186,7 +190,7 @@ export default function MinisteriosPage() {
                   </dd>
                 </div>
               </dl>
-            </div>
+            </FadeInView>
           ))}
         </div>
 
@@ -195,15 +199,19 @@ export default function MinisteriosPage() {
             Projetos na comunidade
           </h2>
           <div className="grid gap-8 sm:grid-cols-2">
-            {projetosComunitarios.map((p) => (
-              <div key={p.nome} className="rounded-2xl border border-[#1d1d1b]/10 p-6">
+            {projetosComunitarios.map((p, i) => (
+              <FadeInView
+                key={p.nome}
+                delay={i * 0.1}
+                className="rounded-2xl border border-[#1d1d1b]/10 p-6"
+              >
                 <div className="mb-4 aspect-video rounded-lg bg-[#1d1d1b]/5" />
                 <h3 className="mb-2 text-xl font-medium">{p.nome}</h3>
                 <p className="mb-1 text-sm text-[#1d1d1b]/70">{p.publico}</p>
                 <p className="text-sm text-[#1d1d1b]/50">
                   {p.responsavel} · {p.rede}
                 </p>
-              </div>
+              </FadeInView>
             ))}
           </div>
         </div>
