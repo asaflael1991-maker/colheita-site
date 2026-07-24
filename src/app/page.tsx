@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import ScrollVideoHero from "@/components/ScrollVideoHero";
 import Section from "@/components/Section";
 import Footer from "@/components/Footer";
 import WatercolorImage from "@/components/WatercolorImage";
+import MinistryMarquee from "@/components/MinistryMarquee";
+import Counter from "@/components/Counter";
 
 const valores = [
   {
@@ -70,7 +72,8 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <Hero />
+        <ScrollVideoHero />
+        <MinistryMarquee />
 
         <Section
           id="quem-somos"
@@ -83,7 +86,7 @@ export default function Home() {
               alt="Pastores da Igreja Colheita"
               className="aspect-square w-full max-w-md lg:max-w-none"
             />
-            <div className="max-w-3xl space-y-5 text-lg text-[#24262c]/70">
+            <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
               <p>
                 A Igreja Colheita nasceu com o propósito de anunciar o
                 Evangelho de Jesus Cristo e formar uma comunidade onde
@@ -100,7 +103,7 @@ export default function Home() {
                 família espiritual que caminha junta, discipula pessoas e
                 compartilha esperança em cada geração.
               </p>
-              <p className="font-medium text-[#24262c]">
+              <p className="font-medium text-[#1d1d1b]">
                 Aqui, cada vida importa.
                 <br />
                 Cada história pode ser transformada.
@@ -116,41 +119,41 @@ export default function Home() {
           eyebrow="Propósito"
           title="Missão, visão e valores"
         >
-          <blockquote className="mb-14 max-w-3xl border-l-2 border-[#24262c]/20 pl-4 text-xl italic text-[#24262c]/70">
+          <blockquote className="mb-14 max-w-3xl border-l-2 border-[#f8a800] pl-4 text-xl italic text-[#1d1d1b]/70">
             &ldquo;A terra se encherá do conhecimento da glória do Senhor,
             como as águas cobrem o mar.&rdquo;
-            <footer className="mt-1 not-italic text-sm text-[#24262c]/45">
+            <footer className="mt-1 not-italic text-sm text-[#1d1d1b]/45">
               Habacuque 2:14
             </footer>
           </blockquote>
 
           <div className="mb-14 grid gap-10 md:grid-cols-2">
             <div>
-              <h3 className="mb-2 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+              <h3 className="mb-2 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
                 Missão
               </h3>
-              <p className="text-lg text-[#24262c]/70">
+              <p className="text-lg text-[#1d1d1b]/70">
                 Ganhar todas as pessoas para Jesus.
               </p>
             </div>
             <div>
-              <h3 className="mb-2 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+              <h3 className="mb-2 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
                 Visão
               </h3>
-              <p className="text-lg text-[#24262c]/70">
+              <p className="text-lg text-[#1d1d1b]/70">
                 Formar uma igreja forte, não apenas uma igreja grande.
               </p>
             </div>
           </div>
 
-          <h3 className="mb-6 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+          <h3 className="mb-6 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
             Valores
           </h3>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {valores.map((v) => (
               <div key={v.title}>
                 <h4 className="mb-1 font-medium">{v.title}</h4>
-                <p className="text-sm text-[#24262c]/60">{v.text}</p>
+                <p className="text-sm text-[#1d1d1b]/60">{v.text}</p>
               </div>
             ))}
           </div>
@@ -162,7 +165,7 @@ export default function Home() {
           title="Transformação acontece quando vidas encontram Jesus."
           tone="inverted"
         >
-          <div className="max-w-3xl space-y-5 text-lg text-[#f8f7f8]/75">
+          <div className="max-w-3xl space-y-5 text-lg text-[#ffffff]/75">
             <p>
               Ao longo da nossa caminhada temos visto famílias restauradas,
               pessoas encontrando esperança, jovens descobrindo propósito e
@@ -173,10 +176,18 @@ export default function Home() {
               sociais e evangelismo, buscamos fazer a diferença dentro e
               fora das paredes da igreja.
             </p>
-            <p className="font-medium text-[#f8f7f8]">
+            <p className="font-medium text-[#ffffff]">
               Nosso maior impacto não é medido em números, mas nas vidas
               transformadas pelo poder do Evangelho.
             </p>
+          </div>
+
+          {/* TODO: substituir pelos números reais da igreja — os valores
+              abaixo são só placeholders de exemplo */}
+          <div className="mt-14 grid gap-8 border-t border-[#ffffff]/15 pt-10 sm:grid-cols-3">
+            <Counter value={500} suffix="+" label="Batismos" />
+            <Counter value={9} label="Ministérios ativos" />
+            <Counter value={15} label="Anos de história" />
           </div>
         </Section>
 
@@ -185,7 +196,7 @@ export default function Home() {
           eyebrow="Prestação de contas"
           title="Administramos cada recurso com responsabilidade e integridade."
         >
-          <div className="max-w-3xl space-y-5 text-lg text-[#24262c]/70">
+          <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
             <p>
               Entendemos que toda contribuição representa um ato de
               confiança e adoração. Por isso, buscamos uma administração
@@ -208,7 +219,7 @@ export default function Home() {
           eyebrow="Ajude a transformar"
           title="Sua generosidade transforma vidas."
         >
-          <div className="max-w-3xl space-y-5 text-lg text-[#24262c]/70">
+          <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
             <p>
               Cada oferta representa uma oportunidade de levar esperança,
               fortalecer ministérios, apoiar projetos sociais e expandir a
@@ -218,19 +229,19 @@ export default function Home() {
               Ao contribuir, você participa daquilo que Deus está
               realizando através da Igreja Colheita.
             </p>
-            <p className="font-medium text-[#24262c]">
+            <p className="font-medium text-[#1d1d1b]">
               Toda semente plantada gera frutos que alcançam vidas.
             </p>
-            <blockquote className="border-l-2 border-[#24262c]/20 pl-4 italic text-[#24262c]/60">
+            <blockquote className="border-l-2 border-[#f8a800] pl-4 italic text-[#1d1d1b]/60">
               &ldquo;Cada um contribua segundo propôs no coração, não com
               tristeza ou por obrigação, porque Deus ama quem dá com
               alegria.&rdquo;
-              <footer className="mt-1 not-italic text-sm text-[#24262c]/45">
+              <footer className="mt-1 not-italic text-sm text-[#1d1d1b]/45">
                 2 Coríntios 9:7
               </footer>
             </blockquote>
           </div>
-          <button className="mt-8 rounded-full bg-[#24262c] px-6 py-3 text-sm text-[#f8f7f8] transition-opacity hover:opacity-90">
+          <button className="mt-8 rounded-full bg-[#e5192c] px-6 py-3 text-sm text-[#ffffff] transition-opacity hover:opacity-90">
             Quero Contribuir
           </button>
         </Section>
@@ -240,28 +251,28 @@ export default function Home() {
           eyebrow="Participe"
           title="Deus nos chamou para servir."
         >
-          <div className="max-w-3xl space-y-5 text-lg text-[#24262c]/70">
+          <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
             <p>
               Acreditamos que cada pessoa recebeu dons e talentos para fazer
               diferença na vida de outras pessoas.
             </p>
-            <p className="text-[#24262c]">Existem diversas áreas onde você pode servir:</p>
+            <p className="text-[#1d1d1b]">Existem diversas áreas onde você pode servir:</p>
           </div>
           <ul className="mt-6 flex flex-wrap gap-3">
             {areasVoluntariado.map((area) => (
               <li
                 key={area}
-                className="rounded-full border border-[#24262c]/15 px-4 py-2 text-sm text-[#24262c]/70"
+                className="rounded-full border border-[#1d1d1b]/15 px-4 py-2 text-sm text-[#1d1d1b]/70"
               >
                 {area}
               </li>
             ))}
           </ul>
-          <p className="mt-8 max-w-2xl text-[#24262c]/70">
+          <p className="mt-8 max-w-2xl text-[#1d1d1b]/70">
             Servir é uma oportunidade de crescer espiritualmente e fazer
             parte daquilo que Deus está construindo.
           </p>
-          <button className="mt-6 rounded-full bg-[#24262c] px-6 py-3 text-sm text-[#f8f7f8] transition-opacity hover:opacity-90">
+          <button className="mt-6 rounded-full bg-[#e5192c] px-6 py-3 text-sm text-[#ffffff] transition-opacity hover:opacity-90">
             Quero Servir
           </button>
         </Section>
@@ -271,7 +282,7 @@ export default function Home() {
           eyebrow="Agenda"
           title="Nossa igreja vive em movimento."
         >
-          <p className="mb-6 max-w-3xl text-lg text-[#24262c]/70">
+          <p className="mb-6 max-w-3xl text-lg text-[#1d1d1b]/70">
             Durante todo o ano promovemos encontros que fortalecem a fé e
             aproximam pessoas.
           </p>
@@ -279,16 +290,16 @@ export default function Home() {
             {tiposEventos.map((evento) => (
               <li
                 key={evento}
-                className="border-l-2 border-[#24262c]/20 pl-4 text-[#24262c]/70"
+                className="border-l-2 border-[#1d1d1b]/20 pl-4 text-[#1d1d1b]/70"
               >
                 {evento}
               </li>
             ))}
           </ul>
-          <p className="mt-8 max-w-2xl text-[#24262c]/70">
+          <p className="mt-8 max-w-2xl text-[#1d1d1b]/70">
             Confira nossa agenda e participe conosco.
           </p>
-          <button className="mt-6 rounded-full bg-[#24262c] px-6 py-3 text-sm text-[#f8f7f8] transition-opacity hover:opacity-90">
+          <button className="mt-6 rounded-full bg-[#e5192c] px-6 py-3 text-sm text-[#ffffff] transition-opacity hover:opacity-90">
             Ver Agenda
           </button>
         </Section>
@@ -300,7 +311,7 @@ export default function Home() {
         >
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <div className="max-w-lg space-y-4 text-lg text-[#24262c]/70">
+              <div className="max-w-lg space-y-4 text-lg text-[#1d1d1b]/70">
                 <p>
                   Estamos de portas abertas para acolher sua família.
                 </p>
@@ -319,23 +330,23 @@ export default function Home() {
                   ["Endereço", "Ministério Colheita Internacional"],
                 ].map(([label, value]) => (
                   <div key={label}>
-                    <dt className="uppercase tracking-[0.15em] text-[#24262c]/45">
+                    <dt className="uppercase tracking-[0.15em] text-[#1d1d1b]/45">
                       {label}
                     </dt>
-                    <dd className="mt-1 text-[#24262c]/80">{value}</dd>
+                    <dd className="mt-1 text-[#1d1d1b]/80">{value}</dd>
                   </div>
                 ))}
               </dl>
 
-              <div className="mt-8 border-t border-[#24262c]/10 pt-8">
-                <h3 className="mb-3 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+              <div className="mt-8 border-t border-[#1d1d1b]/10 pt-8">
+                <h3 className="mb-3 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
                   Horários de culto
                 </h3>
-                <ul className="space-y-1 text-[#24262c]/80">
+                <ul className="space-y-1 text-[#1d1d1b]/80">
                   <li>Domingo — 10h e 18h</li>
                   <li>Quarta-feira — 19h30</li>
                 </ul>
-                <p className="mt-3 text-sm text-[#24262c]/60">
+                <p className="mt-3 text-sm text-[#1d1d1b]/60">
                   Também transmitimos cultos online pelo YouTube e Instagram.
                 </p>
               </div>
@@ -344,16 +355,16 @@ export default function Home() {
                 href="https://maps.app.goo.gl/cF3UXQkKyhtAMquR6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-block text-sm underline underline-offset-4 text-[#24262c]/70 hover:text-[#24262c]"
+                className="mt-6 inline-block text-sm underline underline-offset-4 text-[#1d1d1b]/70 hover:text-[#1d1d1b]"
               >
                 Ver no Google Maps →
               </a>
 
-              <button className="mt-8 block rounded-full bg-[#24262c] px-6 py-3 text-sm text-[#f8f7f8] transition-opacity hover:opacity-90">
+              <button className="mt-8 block rounded-full bg-[#e5192c] px-6 py-3 text-sm text-[#ffffff] transition-opacity hover:opacity-90">
                 Planeje sua Visita
               </button>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-[#24262c]/10">
+            <div className="overflow-hidden rounded-2xl border border-[#1d1d1b]/10">
               <iframe
                 title="Localização — Ministério Colheita Internacional"
                 src="https://www.google.com/maps?q=-22.4224735,-42.9611588&z=16&output=embed"

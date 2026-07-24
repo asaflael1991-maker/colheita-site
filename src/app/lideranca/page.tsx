@@ -84,20 +84,20 @@ export default function LiderancaPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-[1100px] px-6 py-20 lg:px-12 lg:py-28">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#24262c]/50">
+        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#1d1d1b]/50">
           Liderança
         </p>
         <h1 className="mb-14 text-3xl font-medium tracking-tight lg:text-5xl">
           Quem conduz a Igreja Colheita
         </h1>
 
-        <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+        <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
           Pastores principais
         </h2>
         <div className="mb-16 grid gap-10 md:grid-cols-2">
           {pastoresPrincipais.map((p) => (
             <div key={p.nome}>
-              <div className="relative mb-4 aspect-square overflow-hidden rounded-2xl bg-[#24262c]/5">
+              <div className="relative mb-4 aspect-square overflow-hidden rounded-2xl bg-[#1d1d1b]/5">
                 {p.foto && (
                   <Image
                     src={p.foto}
@@ -109,19 +109,19 @@ export default function LiderancaPage() {
                 )}
               </div>
               <h3 className="font-medium">{p.nome}</h3>
-              <p className="mb-2 text-sm text-[#24262c]/50">{p.cargo}</p>
-              <p className="text-[#24262c]/70">{p.bio}</p>
+              <p className="mb-2 text-sm text-[#1d1d1b]/50">{p.cargo}</p>
+              <p className="text-[#1d1d1b]/70">{p.bio}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+        <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
           Equipe pastoral
         </h2>
         <div className="mb-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {equipePastoral.map((p) => (
             <div key={p.nome}>
-              <div className="relative mb-3 aspect-square overflow-hidden rounded-2xl bg-[#24262c]/5">
+              <div className="relative mb-3 aspect-square overflow-hidden rounded-2xl bg-[#1d1d1b]/5">
                 {p.foto && (
                   <Image
                     src={p.foto}
@@ -133,22 +133,22 @@ export default function LiderancaPage() {
                 )}
               </div>
               <h3 className="font-medium">{p.nome}</h3>
-              <p className="text-sm text-[#24262c]/60">{p.bio}</p>
+              <p className="text-sm text-[#1d1d1b]/60">{p.bio}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+        <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
           Líderes de ministérios
         </h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {liderancaMinisterios.map((l) => (
             <div key={l.ministerio}>
               {/* PLACEHOLDER: foto dos líderes de {l.ministerio} */}
-              <div className="mb-3 aspect-square rounded-2xl bg-[#24262c]/5" />
+              <div className="mb-3 aspect-square rounded-2xl bg-[#1d1d1b]/5" />
               <h3 className="font-medium">{l.ministerio}</h3>
-              <p className="mb-1 text-sm text-[#24262c]/50">{l.lideres}</p>
-              <p className="text-sm text-[#24262c]/60">{l.bio}</p>
+              <p className="mb-1 text-sm text-[#1d1d1b]/50">{l.lideres}</p>
+              <p className="text-sm text-[#1d1d1b]/60">{l.bio}</p>
             </div>
           ))}
         </div>

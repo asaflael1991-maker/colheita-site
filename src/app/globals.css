@@ -1,15 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #f8f7f8;
-  --color-ink: #24262c;
-  --color-ink-soft: rgba(36, 38, 44, 0.5);
+  --color-bg: #ffffff;
+  --color-ink: #1d1d1b;
+  --color-ink-soft: rgba(29, 29, 27, 0.5);
   --color-veil: rgb(227, 224, 229);
+  --color-brand-red: #e5192c;
+  --color-brand-gold: #f8a800;
 }
 
 @theme inline {
   --color-bg: var(--color-bg);
   --color-ink: var(--color-ink);
+  --color-brand-red: var(--color-brand-red);
+  --color-brand-gold: var(--color-brand-gold);
   --font-display: var(--font-grinola);
   --font-body: var(--font-body);
 }
@@ -42,4 +46,22 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-ink);
   outline-offset: 3px;
+}
+
+/* Carrossel horizontal automático (logos de ministério). A faixa é
+   renderizada em dobro (ver MinistryMarquee.tsx) e desloca -50% —
+   como a segunda metade é idêntica à primeira, o loop fica invisível.
+   `prefers-reduced-motion` já é tratado pela regra global acima, que
+   zera a duração de qualquer animação CSS. */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 28s linear infinite;
 }

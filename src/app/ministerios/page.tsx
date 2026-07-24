@@ -138,7 +138,7 @@ export default function MinisteriosPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-[1200px] px-6 py-20 lg:px-12 lg:py-28">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#24262c]/50">
+        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#1d1d1b]/50">
           Ministérios
         </p>
         <h1 className="mb-14 text-3xl font-medium tracking-tight lg:text-5xl">
@@ -149,9 +149,9 @@ export default function MinisteriosPage() {
           {ministerios.map((m) => (
             <div
               key={m.nome}
-              className="rounded-2xl border border-[#24262c]/10 p-6"
+              className="rounded-2xl border border-[#1d1d1b]/10 p-6"
             >
-              <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-[#24262c]/5">
+              <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-[#1d1d1b]/5">
                 {m.logo && (
                   <Image
                     src={m.logo}
@@ -163,25 +163,25 @@ export default function MinisteriosPage() {
                 )}
               </div>
               <h2 className="mb-2 text-xl font-medium">{m.nome}</h2>
-              <p className="mb-3 text-[#24262c]/70">{m.objetivo}</p>
-              <p className="mb-4 text-sm text-[#24262c]/60">
+              <p className="mb-3 text-[#1d1d1b]/70">{m.objetivo}</p>
+              <p className="mb-4 text-sm text-[#1d1d1b]/60">
                 {m.comoFunciona}
               </p>
-              <dl className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-[#24262c]/10 pt-4 text-sm">
+              <dl className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-[#1d1d1b]/10 pt-4 text-sm">
                 <div>
-                  <dt className="text-[#24262c]/45">Quando</dt>
-                  <dd className="text-[#24262c]/80">{m.horario}</dd>
+                  <dt className="text-[#1d1d1b]/45">Quando</dt>
+                  <dd className="text-[#1d1d1b]/80">{m.horario}</dd>
                 </div>
                 <div>
-                  <dt className="text-[#24262c]/45">Público</dt>
-                  <dd className="text-[#24262c]/80">{m.publico}</dd>
+                  <dt className="text-[#1d1d1b]/45">Público</dt>
+                  <dd className="text-[#1d1d1b]/80">{m.publico}</dd>
                 </div>
                 <div className="col-span-2">
-                  <dt className="text-[#24262c]/45">Responsável</dt>
-                  <dd className="text-[#24262c]/80">
+                  <dt className="text-[#1d1d1b]/45">Responsável</dt>
+                  <dd className="text-[#1d1d1b]/80">
                     {m.responsavel}
                     {m.rede && (
-                      <span className="text-[#24262c]/45"> · {m.rede}</span>
+                      <span className="text-[#1d1d1b]/45"> · {m.rede}</span>
                     )}
                   </dd>
                 </div>
@@ -190,17 +190,17 @@ export default function MinisteriosPage() {
           ))}
         </div>
 
-        <div className="mt-20 border-t border-[#24262c]/10 pt-12">
-          <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+        <div className="mt-20 border-t border-[#1d1d1b]/10 pt-12">
+          <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
             Projetos na comunidade
           </h2>
           <div className="grid gap-8 sm:grid-cols-2">
             {projetosComunitarios.map((p) => (
-              <div key={p.nome} className="rounded-2xl border border-[#24262c]/10 p-6">
-                <div className="mb-4 aspect-video rounded-lg bg-[#24262c]/5" />
+              <div key={p.nome} className="rounded-2xl border border-[#1d1d1b]/10 p-6">
+                <div className="mb-4 aspect-video rounded-lg bg-[#1d1d1b]/5" />
                 <h3 className="mb-2 text-xl font-medium">{p.nome}</h3>
-                <p className="mb-1 text-sm text-[#24262c]/70">{p.publico}</p>
-                <p className="text-sm text-[#24262c]/50">
+                <p className="mb-1 text-sm text-[#1d1d1b]/70">{p.publico}</p>
+                <p className="text-sm text-[#1d1d1b]/50">
                   {p.responsavel} · {p.rede}
                 </p>
               </div>

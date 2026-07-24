@@ -23,17 +23,13 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-36 border-t border-[#24262c]/10 px-6 py-20 lg:px-12 lg:py-28 ${
-        inverted ? "bg-[#24262c] text-[#f8f7f8]" : "bg-[#f8f7f8] text-[#24262c]"
+      className={`scroll-mt-36 border-t border-[#1d1d1b]/10 px-6 py-20 lg:px-12 lg:py-28 ${
+        inverted ? "bg-[#1d1d1b] text-[#ffffff]" : "bg-[#ffffff] text-[#1d1d1b]"
       }`}
     >
       <div className="mx-auto max-w-[1440px]">
         {eyebrow && (
-          <p
-            className={`mb-3 text-xs uppercase tracking-[0.3em] ${
-              inverted ? "text-[#f8f7f8]/50" : "text-[#24262c]/50"
-            }`}
-          >
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#f8a800]">
             {eyebrow}
           </p>
         )}

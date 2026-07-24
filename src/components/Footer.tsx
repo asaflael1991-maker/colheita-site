@@ -8,8 +8,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-[#24262c]/10 bg-[#f8f7f8] px-6 py-10 lg:px-12">
-      <div className="mx-auto flex max-w-[1440px] flex-col gap-6 text-sm text-[#24262c]/60 lg:flex-row lg:items-center lg:justify-between">
+    <footer className="border-t border-[#1d1d1b]/10 bg-[#ffffff] px-6 py-10 lg:px-12">
+      <div className="mx-auto flex max-w-[1440px] flex-col gap-6 text-sm text-[#1d1d1b]/60 lg:flex-row lg:items-center lg:justify-between">
         <p>&copy; {new Date().getFullYear()} Ministério Colheita Internacional. Todos os direitos reservados.</p>
 
         <div className="flex flex-wrap gap-6">
@@ -19,15 +19,15 @@ export default function Footer() {
               href={r.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#24262c]"
+              className="hover:text-[#1d1d1b]"
             >
               {r.label}
             </a>
           ))}
-          <Link href="/blog" className="hover:text-[#24262c]">
+          <Link href="/blog" className="hover:text-[#1d1d1b]">
             Notícias
           </Link>
-          <Link href="/privacidade" className="hover:text-[#24262c]">
+          <Link href="/privacidade" className="hover:text-[#1d1d1b]">
             Política de privacidade
           </Link>
         </div>

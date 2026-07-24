@@ -48,7 +48,7 @@ export default function Navbar() {
   const anchorHref = (id: string) => (pathname === "/" ? `#${id}` : `/#${id}`);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#24262c]/10 bg-[#f8f7f8]/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[#1d1d1b]/10 bg-[#ffffff]/90 backdrop-blur">
       {/* Linha 1: logo (esquerda) + seções da home */}
       <nav className="relative mx-auto flex min-h-[4.5rem] max-w-[1440px] items-center px-6 py-2 lg:px-12">
         <Link
@@ -59,7 +59,7 @@ export default function Navbar() {
             src="/images/logo.png"
             alt="Colheita — Uma família para pertencer"
             width={1080}
-            height={415}
+            height={353}
             priority
             className="h-14 w-auto"
           />
@@ -70,7 +70,7 @@ export default function Navbar() {
             <li key={s.id}>
               <Link
                 href={anchorHref(s.id)}
-                className="text-sm text-[#24262c]/70 transition-colors hover:text-[#24262c]"
+                className="text-sm text-[#1d1d1b]/70 transition-colors hover:text-[#1d1d1b]"
               >
                 {s.label}
               </Link>
@@ -87,12 +87,12 @@ export default function Navbar() {
           className="absolute right-6 top-1/2 flex h-10 w-10 -translate-y-1/2 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
-            className={`h-px w-6 bg-[#24262c] transition-transform ${
+            className={`h-px w-6 bg-[#1d1d1b] transition-transform ${
               open ? "translate-y-[3.5px] rotate-45" : ""
             }`}
           />
           <span
-            className={`h-px w-6 bg-[#24262c] transition-transform ${
+            className={`h-px w-6 bg-[#1d1d1b] transition-transform ${
               open ? "-translate-y-[3.5px] -rotate-45" : ""
             }`}
           />
@@ -101,13 +101,13 @@ export default function Navbar() {
 
       {/* Linha 2: páginas próprias + CTA (só desktop — no mobile fica
           tudo junto no dropdown do hambúrguer) */}
-      <div className="hidden border-t border-[#24262c]/10 lg:block">
+      <div className="hidden border-t border-[#1d1d1b]/10 lg:block">
         <ul className="mx-auto flex max-w-[1440px] items-center justify-center gap-6 px-6 py-2 lg:px-12">
           {pages.map((p) => (
             <li key={p.href}>
               <Link
                 href={p.href}
-                className="text-sm text-[#24262c]/70 transition-colors hover:text-[#24262c]"
+                className="text-sm text-[#1d1d1b]/70 transition-colors hover:text-[#1d1d1b]"
               >
                 {p.label}
               </Link>
@@ -116,7 +116,7 @@ export default function Navbar() {
           <li>
             <Link
               href={anchorHref("doacoes")}
-              className="rounded-full bg-[#24262c] px-4 py-2 text-sm text-[#f8f7f8] transition-opacity hover:opacity-90"
+              className="rounded-full bg-[#e5192c] px-4 py-2 text-sm text-[#ffffff] transition-opacity hover:opacity-90"
             >
               Doar agora
             </Link>
@@ -126,25 +126,25 @@ export default function Navbar() {
 
       {/* Menu mobile: junta as duas linhas num único dropdown */}
       {open && (
-        <ul className="flex flex-col gap-1 border-t border-[#24262c]/10 px-6 py-4 lg:hidden">
+        <ul className="flex flex-col gap-1 border-t border-[#1d1d1b]/10 px-6 py-4 lg:hidden">
           {sections.map((s) => (
             <li key={s.id}>
               <Link
                 href={anchorHref(s.id)}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm text-[#24262c]/80"
+                className="block py-2 text-sm text-[#1d1d1b]/80"
               >
                 {s.label}
               </Link>
             </li>
           ))}
-          <li className="my-2 border-t border-[#24262c]/10" />
+          <li className="my-2 border-t border-[#1d1d1b]/10" />
           {pages.map((p) => (
             <li key={p.href}>
               <Link
                 href={p.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 text-sm text-[#24262c]/80"
+                className="block py-2 text-sm text-[#1d1d1b]/80"
               >
                 {p.label}
               </Link>

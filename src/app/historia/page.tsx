@@ -19,17 +19,17 @@ export default function HistoriaPage() {
     <>
       <Navbar />
       <main className="mx-auto max-w-[900px] px-6 py-20 lg:px-12 lg:py-28">
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#24262c]/50">
+        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#1d1d1b]/50">
           Nossa história
         </p>
         <h1 className="mb-4 text-3xl font-medium tracking-tight lg:text-5xl">
           Como nasceu a Igreja Colheita
         </h1>
-        <p className="mb-12 text-lg text-[#24262c]/60">
-          Fundada em <strong className="text-[#24262c]">2011</strong>
+        <p className="mb-12 text-lg text-[#1d1d1b]/60">
+          Fundada em <strong className="text-[#1d1d1b]">2011</strong>
         </p>
 
-        <div className="space-y-5 text-lg leading-relaxed text-[#24262c]/70">
+        <div className="space-y-5 text-lg leading-relaxed text-[#1d1d1b]/70">
           <p>
             A Igreja Colheita nasceu no coração de Deus antes de nascer em
             um endereço. Ela surgiu do desejo de ver pessoas encontrando um
@@ -64,24 +64,24 @@ export default function HistoriaPage() {
           </p>
         </div>
 
-        <div className="mt-14 border-t border-[#24262c]/10 pt-10">
-          <h2 className="mb-4 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+        <div className="mt-14 border-t border-[#1d1d1b]/10 pt-10">
+          <h2 className="mb-4 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
             Fundadores
           </h2>
           <ul className="grid gap-2 sm:grid-cols-2">
             {fundadores.map((nome) => (
-              <li key={nome} className="text-[#24262c]/80">
+              <li key={nome} className="text-[#1d1d1b]/80">
                 {nome}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="mt-14 border-t border-[#24262c]/10 pt-10">
-          <h2 className="mb-4 text-sm uppercase tracking-[0.2em] text-[#24262c]/50">
+        <div className="mt-14 border-t border-[#1d1d1b]/10 pt-10">
+          <h2 className="mb-4 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
             Testemunhos e conquistas
           </h2>
-          <div className="space-y-5 text-lg leading-relaxed text-[#24262c]/70">
+          <div className="space-y-5 text-lg leading-relaxed text-[#1d1d1b]/70">
             <p>
               Ao longo da nossa caminhada, temos visto a fidelidade de Deus
               em cada etapa. Entre as principais conquistas que celebramos
@@ -107,7 +107,7 @@ export default function HistoriaPage() {
               Sua obra. Toda honra e toda glória pertencem a Ele.
             </p>
           </div>
-          <blockquote className="mt-8 border-l-2 border-[#24262c]/20 pl-4 text-xl italic text-[#24262c]/70">
+          <blockquote className="mt-8 border-l-2 border-[#f8a800] pl-4 text-xl italic text-[#1d1d1b]/70">
             &ldquo;Nossa maior conquista nunca foi abrir uma igreja, mas
             ver pessoas sendo transformadas por Jesus e encontrando um
             lugar para pertencer, crescer e servir.&rdquo;

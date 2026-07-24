@@ -17,7 +17,7 @@ export default function PrivacidadePage() {
         {/* TODO: substituir pelo texto real, revisado com um advogado/DPO
             (LGPD exige itens específicos: dados coletados, finalidade,
             base legal, direitos do titular, contato do DPO etc.) */}
-        <div className="space-y-6 text-[#24262c]/70">
+        <div className="space-y-6 text-[#1d1d1b]/70">
           <p>
             Este é um texto de exemplo. Substitua pela política de
             privacidade real da organização, revisada por um profissional
