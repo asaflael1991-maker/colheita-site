@@ -3,6 +3,7 @@ import ScrollVideoHero from "@/components/ScrollVideoHero";
 import Section from "@/components/Section";
 import Footer from "@/components/Footer";
 import WatercolorImage from "@/components/WatercolorImage";
+import ScrollScaleImage from "@/components/ScrollScaleImage";
 import MinistryMarquee from "@/components/MinistryMarquee";
 import Counter from "@/components/Counter";
 
@@ -73,7 +74,6 @@ export default function Home() {
       <Navbar />
       <main>
         <ScrollVideoHero />
-        <MinistryMarquee />
 
         <Section
           id="quem-somos"
@@ -218,8 +218,15 @@ export default function Home() {
           id="doacoes"
           eyebrow="Ajude a transformar"
           title="Sua generosidade transforma vidas."
+          tone="inverted"
         >
-          <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
+          <ScrollScaleImage
+            src="/images/doacoes/mercado.jpg"
+            alt="Voluntários organizando doações de alimentos no Mercado Solidário da Igreja Colheita"
+            className="mb-12 aspect-[21/9] w-full"
+          />
+
+          <div className="max-w-3xl space-y-5 text-lg text-[#ffffff]/75">
             <p>
               Cada oferta representa uma oportunidade de levar esperança,
               fortalecer ministérios, apoiar projetos sociais e expandir a
@@ -229,14 +236,14 @@ export default function Home() {
               Ao contribuir, você participa daquilo que Deus está
               realizando através da Igreja Colheita.
             </p>
-            <p className="font-medium text-[#1d1d1b]">
+            <p className="font-medium text-[#ffffff]">
               Toda semente plantada gera frutos que alcançam vidas.
             </p>
-            <blockquote className="border-l-2 border-[#f8a800] pl-4 italic text-[#1d1d1b]/60">
+            <blockquote className="border-l-2 border-[#f8a800] pl-4 italic text-[#ffffff]/70">
               &ldquo;Cada um contribua segundo propôs no coração, não com
               tristeza ou por obrigação, porque Deus ama quem dá com
               alegria.&rdquo;
-              <footer className="mt-1 not-italic text-sm text-[#1d1d1b]/45">
+              <footer className="mt-1 not-italic text-sm text-[#ffffff]/45">
                 2 Coríntios 9:7
               </footer>
             </blockquote>
@@ -303,6 +310,8 @@ export default function Home() {
             Ver Agenda
           </button>
         </Section>
+
+        <MinistryMarquee />
 
         <Section
           id="contato"
