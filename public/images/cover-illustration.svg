@@ -1,0 +1,14 @@
+<svg viewBox="0 0 962 610" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Placeholder decorative mark. Replace with the illustration exported
+       from the Figma node "Vector 25" (28001:32) for a pixel-accurate match. -->
+  <g opacity="0.9" stroke="#24262c" stroke-width="1.4">
+    <path d="M481 40 L481 570" stroke-opacity="0.15" />
+    <path d="M120 305 L842 305" stroke-opacity="0.15" />
+    <circle cx="481" cy="305" r="230" stroke-opacity="0.35" />
+    <circle cx="481" cy="305" r="150" stroke-opacity="0.5" />
+    <path
+      d="M481 120 L520 260 L660 305 L520 350 L481 490 L442 350 L302 305 L442 260 Z"
+      stroke-opacity="0.7"
+    />
+  </g>
+</svg>
