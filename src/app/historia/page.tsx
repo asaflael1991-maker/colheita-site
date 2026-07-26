@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeInView from "@/components/FadeInView";
+import StickyPhoto from "@/components/StickyPhoto";
 
 export const metadata: Metadata = {
   title: "Nossa História — Colheita",
@@ -19,6 +20,12 @@ export default function HistoriaPage() {
   return (
     <>
       <Navbar />
+
+      <StickyPhoto
+        src="/images/quem-somos/fachada.jpg"
+        alt="Fachada da Igreja Colheita"
+      />
+
       <main className="mx-auto max-w-[900px] px-6 py-20 lg:px-12 lg:py-28">
         <FadeInView>
           <p className="mb-3 text-xs uppercase tracking-[0.3em] text-[#1d1d1b]/50">
