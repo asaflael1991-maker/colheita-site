@@ -80,6 +80,12 @@ export default function Home() {
           eyebrow="Quem somos"
           title="Uma igreja para viver Jesus todos os dias."
         >
+          <ScrollScaleImage
+            src="/images/quem-somos/fachada.jpg"
+            alt="Fachada da Igreja Colheita"
+            className="mb-14 aspect-[21/9] w-full"
+          />
+
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:items-center lg:gap-16">
             <WatercolorImage
               src="/images/pastores.jpg"
