@@ -86,6 +86,7 @@ const ministerios: {
     horario: "Conforme agenda ministerial",
     publico: "Membros da igreja",
     responsavel: "Pra. Sabrinne",
+    logo: "/images/ministerios/profetico.jpg",
   },
   {
     nome: "Ministério de Células",
@@ -96,6 +97,7 @@ const ministerios: {
     horario: "Durante a semana, conforme cada célula",
     publico: "Toda a igreja",
     responsavel: "Pr. Pedro e Pra. Jéssica",
+    logo: "/images/ministerios/celulas.jpg",
   },
   {
     nome: "Ministério de Voluntários",
@@ -106,6 +108,7 @@ const ministerios: {
     horario: "Conforme escalas",
     publico: "Membros que desejam servir",
     responsavel: "Irª. Regina",
+    logo: "/images/ministerios/voluntarios.jpg",
   },
   {
     nome: "Ministério de Comunicação",
@@ -116,6 +119,7 @@ const ministerios: {
     horario: "Conforme escalas e programação da igreja",
     publico: "Toda a igreja e comunidade",
     responsavel: "Lucas Weyne, Miguel Garcia e Clara Mariano",
+    logo: "/images/ministerios/comunicacao.jpg",
   },
 ];
 
