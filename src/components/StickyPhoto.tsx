@@ -1,44 +1,81 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 
 /**
  * StickyPhoto — foto de fundo que "congela" (fica grudada no topo da
- * tela) enquanto o usuário rola, até a seção seguinte subir e cobri-la
- * por completo — mesma técnica usada no banner de vídeo do topo do
- * site (ScrollVideoHero), aplicada aqui a uma imagem estática.
+ * tela) enquanto o usuário rola, e durante esse tempo:
+ * - dá um leve ZOOM OUT (encolhe suavemente, de scale 1 até ~0.88)
+ * - ESCURECE progressivamente (overlay preto de opacidade 0 até ~0.65)
+ * ...ao mesmo tempo em que a seção seguinte sobe por cima dela — a
+ * mesma combinação usada no igrejadacidade.org.br.
  *
  * Como funciona:
  * - O wrapper externo é mais alto que a tela (`heightVh`, padrão
- *   200vh) — é esse espaço extra que dá "tempo de rolagem" pra foto
- *   ficar parada na tela.
- * - A camada interna (`sticky top-0 h-screen`) é o que realmente
- *   gruda no topo durante esse trecho.
- * - Assim que o usuário termina de rolar por todo o wrapper, ele
- *   "libera" a foto — e como a próxima seção do site vem logo depois,
- *   com fundo sólido, ela sobe naturalmente e cobre a foto por cima,
- *   como se fosse um cartão se empilhando sobre o outro.
+ *   140vh) — esse espaço extra é o "tempo de rolagem" em que a foto
+ *   fica grudada no topo.
+ * - `useScroll` mede o progresso da rolagem DENTRO desse wrapper
+ *   (0 = acabou de grudar; 1 = está prestes a soltar) — é esse
+ *   progresso que "toca" o zoom out e o escurecimento em tempo real,
+ *   não uma animação de tempo fixo.
+ * - Assim que o wrapper termina, a foto solta e a próxima seção
+ *   (com fundo sólido) sobe naturalmente por cima dela.
  *
- * Sem nenhuma lógica de `prefers-reduced-motion` aqui: mesmo sem o
- * efeito de "congelar", a foto continua perfeitamente visível e
- * acessível — o efeito é puramente decorativo/estrutural (CSS
- * `position: sticky`), não uma animação JS que precise ser desligada.
+ * Com `prefers-reduced-motion`, a foto fica só um pouco escurecida
+ * (sem o zoom out contínuo ligado ao scroll).
  */
 export default function StickyPhoto({
   id,
   src,
   alt,
-  heightVh = 200,
+  heightVh = 140,
 }: {
   id?: string;
   src: string;
   alt: string;
   heightVh?: number;
 }) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const shouldReduceMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: wrapperRef,
+    offset: ["start start", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.88]);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.65]);
+
   return (
-    <div id={id} className="relative scroll-mt-36" style={{ height: `${heightVh}vh` }}>
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <Image src={src} alt={alt} fill priority sizes="100vw" className="object-cover" />
+    <div
+      ref={wrapperRef}
+      id={id}
+      className="relative scroll-mt-36"
+      style={{ height: `${heightVh}vh` }}
+    >
+      <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
+        <motion.div
+          className="relative h-full w-full"
+          style={shouldReduceMotion ? undefined : { scale }}
+        >
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </motion.div>
+
+        {/* Escurece progressivamente conforme a foto fica congelada */}
+        <motion.div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-black"
+          style={{ opacity: shouldReduceMotion ? 0.3 : overlayOpacity }}
+        />
       </div>
     </div>
   );
