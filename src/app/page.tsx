@@ -85,7 +85,7 @@ export default function Home() {
             className="mb-14 aspect-[21/9] w-full"
           />
 
-          <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
+          <div className="max-w-4xl space-y-5 text-lg text-[#1d1d1b]/70">
             <p>
               A Igreja Colheita nasceu com o propósito de anunciar o
               Evangelho de Jesus Cristo e formar uma comunidade onde
@@ -163,7 +163,7 @@ export default function Home() {
           title="Transformação acontece quando vidas encontram Jesus."
           tone="inverted"
         >
-          <div className="max-w-3xl space-y-5 text-lg text-[#ffffff]/75">
+          <div className="max-w-4xl space-y-5 text-lg text-[#ffffff]/75">
             <p>
               Ao longo da nossa caminhada temos visto famílias restauradas,
               pessoas encontrando esperança, jovens descobrindo propósito e
@@ -194,7 +194,7 @@ export default function Home() {
           eyebrow="Prestação de contas"
           title="Administramos cada recurso com responsabilidade e integridade."
         >
-          <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
+          <div className="max-w-4xl space-y-5 text-lg text-[#1d1d1b]/70">
             <p>
               Entendemos que toda contribuição representa um ato de
               confiança e adoração. Por isso, buscamos uma administração
@@ -224,7 +224,7 @@ export default function Home() {
             className="mb-12 aspect-[21/9] w-full"
           />
 
-          <div className="max-w-3xl space-y-5 text-lg text-[#ffffff]/75">
+          <div className="max-w-4xl space-y-5 text-lg text-[#ffffff]/75">
             <p>
               Cada oferta representa uma oportunidade de levar esperança,
               fortalecer ministérios, apoiar projetos sociais e expandir a
@@ -256,7 +256,7 @@ export default function Home() {
           eyebrow="Participe"
           title="Deus nos chamou para servir."
         >
-          <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
+          <div className="max-w-4xl space-y-5 text-lg text-[#1d1d1b]/70">
             <p>
               Acreditamos que cada pessoa recebeu dons e talentos para fazer
               diferença na vida de outras pessoas.
@@ -287,7 +287,7 @@ export default function Home() {
           eyebrow="Agenda"
           title="Nossa igreja vive em movimento."
         >
-          <p className="mb-6 max-w-3xl text-lg text-[#1d1d1b]/70">
+          <p className="mb-6 max-w-4xl text-lg text-[#1d1d1b]/70">
             Durante todo o ano promovemos encontros que fortalecem a fé e
             aproximam pessoas.
           </p>
