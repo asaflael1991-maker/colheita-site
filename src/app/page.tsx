@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import ScrollVideoHero from "@/components/ScrollVideoHero";
 import Section from "@/components/Section";
 import Footer from "@/components/Footer";
-import WatercolorImage from "@/components/WatercolorImage";
 import ScrollScaleImage from "@/components/ScrollScaleImage";
 import MinistryMarquee from "@/components/MinistryMarquee";
 import Counter from "@/components/Counter";
@@ -86,37 +85,30 @@ export default function Home() {
             className="mb-14 aspect-[21/9] w-full"
           />
 
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:items-center lg:gap-16">
-            <WatercolorImage
-              src="/images/pastores.jpg"
-              alt="Pastores da Igreja Colheita"
-              className="aspect-square w-full max-w-md lg:max-w-none"
-            />
-            <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
-              <p>
-                A Igreja Colheita nasceu com o propósito de anunciar o
-                Evangelho de Jesus Cristo e formar uma comunidade onde
-                pessoas encontram fé, pertencimento e propósito.
-              </p>
-              <p>
-                Somos uma igreja que acredita no poder transformador da
-                Palavra de Deus, na atuação do Espírito Santo e na
-                importância de viver o Evangelho de forma prática, através
-                do amor, da comunhão e do serviço ao próximo.
-              </p>
-              <p>
-                Mais do que um lugar para participar de cultos, somos uma
-                família espiritual que caminha junta, discipula pessoas e
-                compartilha esperança em cada geração.
-              </p>
-              <p className="font-medium text-[#1d1d1b]">
-                Aqui, cada vida importa.
-                <br />
-                Cada história pode ser transformada.
-                <br />
-                Cada pessoa é bem-vinda.
-              </p>
-            </div>
+          <div className="max-w-3xl space-y-5 text-lg text-[#1d1d1b]/70">
+            <p>
+              A Igreja Colheita nasceu com o propósito de anunciar o
+              Evangelho de Jesus Cristo e formar uma comunidade onde
+              pessoas encontram fé, pertencimento e propósito.
+            </p>
+            <p>
+              Somos uma igreja que acredita no poder transformador da
+              Palavra de Deus, na atuação do Espírito Santo e na
+              importância de viver o Evangelho de forma prática, através
+              do amor, da comunhão e do serviço ao próximo.
+            </p>
+            <p>
+              Mais do que um lugar para participar de cultos, somos uma
+              família espiritual que caminha junta, discipula pessoas e
+              compartilha esperança em cada geração.
+            </p>
+            <p className="font-medium text-[#1d1d1b]">
+              Aqui, cada vida importa.
+              <br />
+              Cada história pode ser transformada.
+              <br />
+              Cada pessoa é bem-vinda.
+            </p>
           </div>
         </Section>
 
