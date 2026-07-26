@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import ScrollVideoHero from "@/components/ScrollVideoHero";
 import Section from "@/components/Section";
 import Footer from "@/components/Footer";
-import ScrollScaleImage from "@/components/ScrollScaleImage";
+import StickyPhoto from "@/components/StickyPhoto";
 import MinistryMarquee from "@/components/MinistryMarquee";
 import Counter from "@/components/Counter";
 
@@ -74,17 +74,17 @@ export default function Home() {
       <main>
         <ScrollVideoHero />
 
-        <Section
+        <StickyPhoto
           id="quem-somos"
+          src="/images/quem-somos/fachada.jpg"
+          alt="Fachada da Igreja Colheita"
+        />
+
+        <Section
+          id="quem-somos-texto"
           eyebrow="Quem somos"
           title="Uma igreja para viver Jesus todos os dias."
         >
-          <ScrollScaleImage
-            src="/images/quem-somos/fachada.jpg"
-            alt="Fachada da Igreja Colheita"
-            className="mb-14 aspect-[21/9] w-full"
-          />
-
           <div className="max-w-4xl space-y-5 text-lg text-[#1d1d1b]/70">
             <p>
               A Igreja Colheita nasceu com o propósito de anunciar o
@@ -212,18 +212,18 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section
+        <StickyPhoto
           id="doacoes"
+          src="/images/doacoes/mercado.jpg"
+          alt="Voluntários organizando doações de alimentos no Mercado Solidário da Igreja Colheita"
+        />
+
+        <Section
+          id="doacoes-texto"
           eyebrow="Ajude a transformar"
           title="Sua generosidade transforma vidas."
           tone="inverted"
         >
-          <ScrollScaleImage
-            src="/images/doacoes/mercado.jpg"
-            alt="Voluntários organizando doações de alimentos no Mercado Solidário da Igreja Colheita"
-            className="mb-12 aspect-[21/9] w-full"
-          />
-
           <div className="max-w-4xl space-y-5 text-lg text-[#ffffff]/75">
             <p>
               Cada oferta representa uma oportunidade de levar esperança,
