@@ -1,10 +1,23 @@
 import Link from "next/link";
+import { InstagramIcon, YouTubeIcon, TikTokIcon } from "@/components/SocialIcons";
 
 export default function Footer() {
   const redes = [
-    { label: "Instagram", href: "https://www.instagram.com/igrejacolheita_oficial/" },
-    { label: "YouTube", href: "https://www.youtube.com/@igrejacolheitaoficial" },
-    { label: "TikTok", href: "https://www.tiktok.com/@igrejacolheita_oficial" },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/igrejacolheita_oficial/",
+      Icon: InstagramIcon,
+    },
+    {
+      label: "YouTube",
+      href: "https://www.youtube.com/@igrejacolheitaoficial",
+      Icon: YouTubeIcon,
+    },
+    {
+      label: "TikTok",
+      href: "https://www.tiktok.com/@igrejacolheita_oficial",
+      Icon: TikTokIcon,
+    },
   ];
 
   return (
@@ -13,15 +26,16 @@ export default function Footer() {
         <p>&copy; {new Date().getFullYear()} Ministério Colheita Internacional. Todos os direitos reservados.</p>
 
         <div className="flex flex-wrap gap-6">
-          {redes.map((r) => (
+          {redes.map(({ label, href, Icon }) => (
             <a
-              key={r.label}
-              href={r.href}
+              key={label}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#1d1d1b]"
+              className="flex items-center gap-1.5 hover:text-[#1d1d1b]"
             >
-              {r.label}
+              <Icon className="h-4 w-4" />
+              {label}
             </a>
           ))}
           <Link href="/blog" className="hover:text-[#1d1d1b]">
