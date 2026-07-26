@@ -74,14 +74,8 @@ export default function Home() {
       <main>
         <ScrollVideoHero />
 
-        <StickyPhoto
-          id="quem-somos"
-          src="/images/quem-somos/fachada.jpg"
-          alt="Fachada da Igreja Colheita"
-        />
-
         <Section
-          id="quem-somos-texto"
+          id="quem-somos"
           eyebrow="Quem somos"
           title="Uma igreja para viver Jesus todos os dias."
         >
@@ -111,6 +105,11 @@ export default function Home() {
             </p>
           </div>
         </Section>
+
+        <StickyPhoto
+          src="/images/quem-somos/fachada.jpg"
+          alt="Fachada da Igreja Colheita"
+        />
 
         <Section
           id="missao-visao-valores"
