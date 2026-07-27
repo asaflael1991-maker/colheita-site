@@ -47,20 +47,6 @@ export const posts: Post[] = [
       "Enquanto muitos se afastam, nós vamos atravessar uma ponte para uma nova estação.",
     ],
   },
-  {
-    slug: "bem-vindo-ao-nosso-blog",
-    titulo: "Bem-vindo às notícias da Igreja Colheita",
-    data: "2026-01-01",
-    categoria: "Avisos importantes",
-    resumo:
-      "Este é um post de exemplo. Substitua pelo conteúdo real assim que tiver as primeiras notícias pra publicar.",
-    imagem: "/images/blog/placeholder.jpg",
-    corpo: [
-      "Este é um parágrafo de exemplo — é assim que o texto do post aparece na página.",
-      "Você pode ter quantos parágrafos quiser, um por linha aqui no arquivo posts.ts.",
-      "Quando tiver conteúdo de verdade pra publicar, edite este arquivo seguindo as instruções no topo dele.",
-    ],
-  },
 ];
 
 // Posts ordenados do mais recente pro mais antigo (usado na listagem)
