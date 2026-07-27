@@ -32,6 +32,22 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "the-bridge-colheita-2026",
+    titulo: "THE BRIDGE COLHEITA 2026",
+    data: "2026-07-26",
+    categoria: "Eventos especiais",
+    resumo:
+      "Encontro de Férias: um mês dedicado a buscar mais de Deus, enquanto muitos descansam o corpo, nós vamos despertar o espírito.",
+    imagem: "/images/blog/the-bridge-2026.jpg",
+    corpo: [
+      "Encontro de Férias",
+      "Será um mês dedicado a buscar mais de Deus.",
+      "Nas férias, muitos descansam o corpo, mas Deus quer despertar o espírito.",
+      "Enquanto muitos se distraem, nós vamos nos posicionar.",
+      "Enquanto muitos se afastam, nós vamos atravessar uma ponte para uma nova estação.",
+    ],
+  },
+  {
     slug: "bem-vindo-ao-nosso-blog",
     titulo: "Bem-vindo às notícias da Igreja Colheita",
     data: "2026-01-01",
