@@ -22,16 +22,18 @@ export default function Section({
   eyebrow?: string;
   title: string;
   children?: ReactNode;
-  tone?: "default" | "inverted";
+  tone?: "default" | "inverted" | "accent";
 }) {
-  const inverted = tone === "inverted";
+  const backgrounds: Record<"default" | "inverted" | "accent", string> = {
+    default: "bg-[#ffffff] text-[#1d1d1b]",
+    inverted: "bg-[#1d1d1b] text-[#ffffff]",
+    accent: "bg-[#e5192c] text-[#ffffff]",
+  };
 
   return (
     <section
       id={id}
-      className={`scroll-mt-36 border-t border-[#1d1d1b]/10 px-6 py-20 lg:px-12 lg:py-28 ${
-        inverted ? "bg-[#1d1d1b] text-[#ffffff]" : "bg-[#ffffff] text-[#1d1d1b]"
-      }`}
+      className={`scroll-mt-36 border-t border-[#1d1d1b]/10 px-6 py-20 lg:px-12 lg:py-28 ${backgrounds[tone]}`}
     >
       <FadeInView className="mx-auto max-w-[1440px]">
         {eyebrow && (
