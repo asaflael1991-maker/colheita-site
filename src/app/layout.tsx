@@ -14,7 +14,7 @@ const grinola = Cormorant({
 const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "900"],
 });
 
 export const metadata: Metadata = {

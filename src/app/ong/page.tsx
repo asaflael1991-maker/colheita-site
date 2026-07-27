@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FadeInView from "@/components/FadeInView";
 import StickyPhoto from "@/components/StickyPhoto";
+import VerseReveal from "@/components/VerseReveal";
 
 export const metadata: Metadata = {
   title: "Associação Cristã Céus Abertos — Colheita",
@@ -44,7 +45,12 @@ export default function OngPage() {
       <StickyPhoto
         src="/images/ong/associacao-crista-ceus-abertos.png"
         alt="Voluntários da Associação Cristã Céus Abertos atendendo pessoas em situação de rua"
-      />
+      >
+        <VerseReveal
+          text="2 Coríntios 9:7"
+          className="text-4xl text-white sm:text-6xl lg:text-8xl"
+        />
+      </StickyPhoto>
 
       <main className="mx-auto max-w-[900px] px-6 py-20 lg:px-12 lg:py-28">
         <FadeInView>
