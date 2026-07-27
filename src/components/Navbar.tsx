@@ -60,8 +60,8 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Colheita — Uma família para pertencer"
-            width={1080}
-            height={353}
+            width={746}
+            height={239}
             priority
             className="h-14 w-auto"
           />
