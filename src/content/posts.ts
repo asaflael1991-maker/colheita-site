@@ -1,0 +1,57 @@
+/**
+ * posts.ts — conteúdo do blog/notícias.
+ *
+ * COMO ADICIONAR UM POST NOVO:
+ * 1. Copie um dos objetos abaixo (do { até a }, )
+ * 2. Cole antes ou depois dos outros, dentro do array `posts`
+ * 3. Troque os valores:
+ *    - slug: identificador único na URL (só letras minúsculas,
+ *      números e hífen, sem espaço nem acento) — ex: "festa-da-colheita-2026"
+ *    - titulo: aparece na listagem e no topo do post
+ *    - data: formato "AAAA-MM-DD" (ex: "2026-03-15")
+ *    - categoria: uma das que já usamos (ou crie uma nova)
+ *    - resumo: 1-2 frases, aparece só na listagem
+ *    - imagem: caminho da foto de capa (coloque o arquivo em
+ *      public/images/blog/ primeiro)
+ *    - corpo: um parágrafo por linha, entre aspas, separados por vírgula
+ * 4. Salve o arquivo — pronto, o post já aparece no site
+ *
+ * Pra REMOVER um post, apague o bloco inteiro dele (do { até a },
+ * incluindo a vírgula do final).
+ */
+
+export type Post = {
+  slug: string;
+  titulo: string;
+  data: string; // AAAA-MM-DD
+  categoria: string;
+  resumo: string;
+  imagem: string;
+  corpo: string[];
+};
+
+export const posts: Post[] = [
+  {
+    slug: "bem-vindo-ao-nosso-blog",
+    titulo: "Bem-vindo às notícias da Igreja Colheita",
+    data: "2026-01-01",
+    categoria: "Avisos importantes",
+    resumo:
+      "Este é um post de exemplo. Substitua pelo conteúdo real assim que tiver as primeiras notícias pra publicar.",
+    imagem: "/images/blog/placeholder.jpg",
+    corpo: [
+      "Este é um parágrafo de exemplo — é assim que o texto do post aparece na página.",
+      "Você pode ter quantos parágrafos quiser, um por linha aqui no arquivo posts.ts.",
+      "Quando tiver conteúdo de verdade pra publicar, edite este arquivo seguindo as instruções no topo dele.",
+    ],
+  },
+];
+
+// Posts ordenados do mais recente pro mais antigo (usado na listagem)
+export function getPostsOrdenados(): Post[] {
+  return [...posts].sort((a, b) => (a.data < b.data ? 1 : -1));
+}
+
+export function getPostPorSlug(slug: string): Post | undefined {
+  return posts.find((p) => p.slug === slug);
+}

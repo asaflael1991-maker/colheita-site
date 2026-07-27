@@ -129,12 +129,14 @@ const projetosComunitarios = [
     publico: "Crianças da comunidade",
     responsavel: "Miss. Samara Carneiro",
     rede: "@ass.ceusabertos",
+    imagem: "/images/projetos/bale.svg",
   },
   {
     nome: "Krav Maga",
     publico: "Aberto para toda a comunidade, público unissex",
     responsavel: "Ir. Wesley e Ira. Raquel",
     rede: "@ass.ceusabertos",
+    imagem: "/images/projetos/kravmaga.svg",
   },
 ];
 
@@ -209,7 +211,15 @@ export default function MinisteriosPage() {
                 delay={i * 0.1}
                 className="rounded-2xl border border-[#1d1d1b]/10 p-6"
               >
-                <div className="mb-4 aspect-video rounded-lg bg-[#1d1d1b]/5" />
+                <div className="relative mb-4 aspect-video overflow-hidden rounded-lg bg-[#1d1d1b]/5">
+                  <Image
+                    src={p.imagem}
+                    alt={`Ilustração — ${p.nome}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="mb-2 text-xl font-medium">{p.nome}</h3>
                 <p className="mb-1 text-sm text-[#1d1d1b]/70">{p.publico}</p>
                 <p className="text-sm text-[#1d1d1b]/50">
