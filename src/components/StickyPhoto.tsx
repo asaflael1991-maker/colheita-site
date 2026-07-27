@@ -32,6 +32,8 @@ export default function StickyPhoto({
   alt,
   heightVh = 140,
   children,
+  imageWidth = 1920,
+  imageHeight = 1080,
 }: {
   id?: string;
   src: string;
@@ -42,6 +44,11 @@ export default function StickyPhoto({
    *  fixo é somado por trás do texto pra garantir contraste em
    *  qualquer ponto da rolagem. */
   children?: ReactNode;
+  /** Largura/altura REAIS do arquivo de imagem (em px). Usadas só pra
+   *  calcular a proporção exibida no celular, garantindo que a foto
+   *  apareça inteira, sem cortar as laterais. */
+  imageWidth?: number;
+  imageHeight?: number;
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
@@ -55,16 +62,14 @@ export default function StickyPhoto({
   const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.65]);
 
   return (
-    <div
-      ref={wrapperRef}
-      id={id}
-      className="relative scroll-mt-36"
-      style={{ height: `${heightVh}vh` }}
-    >
-      <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
-        <motion.div
-          className="relative h-full w-full"
-          style={shouldReduceMotion ? undefined : { scale }}
+    <div id={id} className="relative scroll-mt-36">
+      {/* CELULAR — banner normal (não "gruda" na rolagem), com a
+          altura calculada pela proporção real da foto: ela aparece
+          inteira, sem cortar ninguém nas laterais. */}
+      <div className="relative w-full overflow-hidden lg:hidden">
+        <div
+          className="relative w-full"
+          style={{ aspectRatio: `${imageWidth} / ${imageHeight}` }}
         >
           <Image
             src={src}
@@ -74,30 +79,68 @@ export default function StickyPhoto({
             sizes="100vw"
             className="object-cover"
           />
-        </motion.div>
 
-        {/* Escurece progressivamente conforme a foto fica congelada */}
-        <motion.div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-black"
-          style={{ opacity: shouldReduceMotion ? 0.3 : overlayOpacity }}
-        />
-
-        {children && (
-          <>
-            {/* Degradê fixo (não depende do scroll) só pra garantir
-                contraste do texto branco sobre a foto */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/30 to-transparent"
-            />
-            <div className="pointer-events-none absolute inset-0 flex items-end">
-              <div className="pointer-events-auto mx-auto w-full max-w-[1440px] px-6 pb-16 lg:px-12 lg:pb-24">
-                {children}
+          {children && (
+            <>
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/30 to-transparent"
+              />
+              <div className="pointer-events-none absolute inset-0 flex items-end">
+                <div className="pointer-events-auto w-full px-6 pb-8">
+                  {children}
+                </div>
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* MONITOR — comportamento original: foto "grudada" em tela
+          cheia, com zoom out e escurecimento conforme a rolagem. */}
+      <div
+        ref={wrapperRef}
+        className="relative hidden lg:block"
+        style={{ height: `${heightVh}vh` }}
+      >
+        <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
+          <motion.div
+            className="relative h-full w-full"
+            style={shouldReduceMotion ? undefined : { scale }}
+          >
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </motion.div>
+
+          {/* Escurece progressivamente conforme a foto fica congelada */}
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-black"
+            style={{ opacity: shouldReduceMotion ? 0.3 : overlayOpacity }}
+          />
+
+          {children && (
+            <>
+              {/* Degradê fixo (não depende do scroll) só pra garantir
+                  contraste do texto branco sobre a foto */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/30 to-transparent"
+              />
+              <div className="pointer-events-none absolute inset-0 flex items-end">
+                <div className="pointer-events-auto mx-auto w-full max-w-[1440px] px-6 pb-16 lg:px-12 lg:pb-24">
+                  {children}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

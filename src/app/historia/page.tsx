@@ -24,6 +24,8 @@ export default function HistoriaPage() {
       <StickyPhoto
         src="/images/quem-somos/fachada.jpg"
         alt="Fachada da Igreja Colheita"
+        imageWidth={1871}
+        imageHeight={822}
       />
 
       <main className="mx-auto max-w-[900px] px-6 py-20 lg:px-12 lg:py-28">

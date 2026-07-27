@@ -111,6 +111,8 @@ export default function Home() {
         <StickyPhoto
           src="/images/quem-somos/fachada.jpg"
           alt="Fachada da Igreja Colheita"
+          imageWidth={1871}
+          imageHeight={822}
         />
 
         <Section
@@ -276,6 +278,8 @@ export default function Home() {
         <StickyPhoto
           src="/images/doacoes/mercado.jpg"
           alt="Voluntários organizando doações de alimentos no Mercado Solidário da Igreja Colheita"
+          imageWidth={1871}
+          imageHeight={822}
         />
 
         <Section
