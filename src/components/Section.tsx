@@ -17,12 +17,15 @@ export default function Section({
   title,
   children,
   tone = "default",
+  eyebrowColor = "text-[#f8a800]",
 }: {
   id: string;
   eyebrow?: string;
   title: string;
   children?: ReactNode;
   tone?: "default" | "inverted" | "accent";
+  /** Cor do texto pequeno acima do título (padrão: dourado da marca) */
+  eyebrowColor?: string;
 }) {
   const backgrounds: Record<"default" | "inverted" | "accent", string> = {
     default: "bg-[#ffffff] text-[#1d1d1b]",
@@ -37,7 +40,9 @@ export default function Section({
     >
       <FadeInView className="mx-auto max-w-[1440px]">
         {eyebrow && (
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#f8a800]">
+          <p
+            className={`mb-3 text-xs font-medium uppercase tracking-[0.3em] ${eyebrowColor}`}
+          >
             {eyebrow}
           </p>
         )}

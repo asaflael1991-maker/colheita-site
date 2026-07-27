@@ -195,6 +195,7 @@ export default function Home() {
           eyebrow="Prestação de contas"
           title="Administramos cada recurso com responsabilidade e integridade."
           tone="accent"
+          eyebrowColor="text-[#1d1d1b]"
         >
           <div className="max-w-4xl space-y-5 text-lg text-[#ffffff]/85">
             <p>
