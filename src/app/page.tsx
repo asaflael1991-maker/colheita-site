@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ScrollVideoHero from "@/components/ScrollVideoHero";
 import Section from "@/components/Section";
@@ -227,6 +228,12 @@ export default function Home() {
             Nossa ONG, braço social da Igreja Colheita, dedicada a levar
             dignidade, acolhimento e esperança a quem mais precisa.
           </p>
+          <Link
+            href="/ong"
+            className="mt-6 inline-block rounded-full bg-[#ffffff] px-6 py-3 text-sm text-[#1d1d1b] transition-opacity hover:opacity-90"
+          >
+            Saiba mais
+          </Link>
         </StickyPhoto>
 
         <Section

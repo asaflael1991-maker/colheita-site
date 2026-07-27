@@ -38,6 +38,7 @@ const pages = [
   { href: "/historia", label: "História" },
   { href: "/lideranca", label: "Liderança" },
   { href: "/ministerios", label: "Ministérios" },
+  { href: "/ong", label: "Céus Abertos" },
   { href: "/galeria", label: "Galeria" },
   { href: "/blog", label: "Notícias" },
 ];
