@@ -229,14 +229,8 @@ export default function Home() {
           </p>
         </StickyPhoto>
 
-        <StickyPhoto
-          id="doacoes"
-          src="/images/doacoes/mercado.jpg"
-          alt="Voluntários organizando doações de alimentos no Mercado Solidário da Igreja Colheita"
-        />
-
         <Section
-          id="doacoes-texto"
+          id="doacoes"
           eyebrow="Ajude a transformar"
           title="Sua generosidade transforma vidas."
           tone="inverted"
@@ -269,6 +263,11 @@ export default function Home() {
 
           <PixCopyButton pixKey="42.118.366/0001-00" />
         </Section>
+
+        <StickyPhoto
+          src="/images/doacoes/mercado.jpg"
+          alt="Voluntários organizando doações de alimentos no Mercado Solidário da Igreja Colheita"
+        />
 
         <Section
           id="voluntariado"
