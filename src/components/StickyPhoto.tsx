@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 
@@ -31,11 +31,17 @@ export default function StickyPhoto({
   src,
   alt,
   heightVh = 140,
+  children,
 }: {
   id?: string;
   src: string;
   alt: string;
   heightVh?: number;
+  /** Conteúdo opcional (eyebrow, título, texto) exibido sobre a foto,
+   *  ancorado na parte inferior. Quando presente, um degradê escuro
+   *  fixo é somado por trás do texto pra garantir contraste em
+   *  qualquer ponto da rolagem. */
+  children?: ReactNode;
 }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
@@ -76,6 +82,22 @@ export default function StickyPhoto({
           className="pointer-events-none absolute inset-0 bg-black"
           style={{ opacity: shouldReduceMotion ? 0.3 : overlayOpacity }}
         />
+
+        {children && (
+          <>
+            {/* Degradê fixo (não depende do scroll) só pra garantir
+                contraste do texto branco sobre a foto */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/30 to-transparent"
+            />
+            <div className="pointer-events-none absolute inset-0 flex items-end">
+              <div className="pointer-events-auto mx-auto w-full max-w-[1440px] px-6 pb-16 lg:px-12 lg:pb-24">
+                {children}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
