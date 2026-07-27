@@ -27,6 +27,7 @@ const sections = [
   { id: "missao-visao-valores", label: "Missão, visão e valores" },
   { id: "impacto", label: "Impacto" },
   { id: "transparencia", label: "Transparência" },
+  { id: "ong", label: "ONG" },
   { id: "doacoes", label: "Doações" },
   { id: "voluntariado", label: "Voluntariado" },
   { id: "eventos", label: "Eventos" },

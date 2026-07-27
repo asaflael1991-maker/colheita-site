@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import ScrollVideoHero from "@/components/ScrollVideoHero";
 import Section from "@/components/Section";
@@ -209,6 +210,41 @@ export default function Home() {
               Nosso compromisso é honrar a confiança da igreja através de
               uma gestão séria e transparente.
             </p>
+          </div>
+        </Section>
+
+        <Section
+          id="ong"
+          eyebrow="Ação social"
+          title="Associação Cristã Céus Abertos"
+        >
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="max-w-xl space-y-5 text-lg text-[#1d1d1b]/70">
+              <p>
+                A Associação Cristã Céus Abertos é a nossa ONG, braço social
+                da Igreja Colheita dedicado a levar dignidade, acolhimento e
+                esperança a quem mais precisa.
+              </p>
+              <p>
+                Por meio de ações como o Mercado Solidário, distribuição de
+                alimentos, roupas e itens de higiene, e atendimento a pessoas
+                em situação de rua, buscamos ser as mãos de Jesus na vida de
+                cada pessoa que encontramos.
+              </p>
+              <p className="font-medium text-[#1d1d1b]">
+                Cuidar do próximo também é adorar a Deus.
+              </p>
+            </div>
+
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/ong/associacao-crista-ceus-abertos.png"
+                alt="Voluntários da Associação Cristã Céus Abertos atendendo pessoas em situação de rua"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </Section>
 
