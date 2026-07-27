@@ -222,19 +222,19 @@ export default function Home() {
           src="/images/ong/associacao-crista-ceus-abertos.png"
           alt="Voluntários da Associação Cristã Céus Abertos atendendo pessoas em situação de rua"
         >
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.3em] text-[#f8a800]">
+          <p className="mb-1 text-xs font-medium uppercase tracking-[0.3em] text-[#f8a800] lg:mb-3">
             Ação social
           </p>
-          <h2 className="mb-5 max-w-2xl text-3xl font-medium tracking-tight text-white lg:text-5xl">
+          <h2 className="mb-2 max-w-2xl text-xl font-medium tracking-tight text-white sm:text-2xl lg:mb-5 lg:text-5xl">
             Associação Cristã Céus Abertos
           </h2>
-          <p className="max-w-xl text-lg text-white/85">
+          <p className="max-w-xl text-sm text-white/85 lg:text-lg">
             Nossa ONG, braço social da Igreja Colheita, dedicada a levar
             dignidade, acolhimento e esperança a quem mais precisa.
           </p>
           <Link
             href="/ong"
-            className="mt-6 inline-block rounded-full bg-[#ffffff] px-6 py-3 text-sm text-[#1d1d1b] transition-opacity hover:opacity-90"
+            className="mt-3 inline-block rounded-full bg-[#ffffff] px-5 py-2 text-sm text-[#1d1d1b] transition-opacity hover:opacity-90 lg:mt-6 lg:px-6 lg:py-3"
           >
             Saiba mais
           </Link>

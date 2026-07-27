@@ -87,7 +87,7 @@ export default function StickyPhoto({
                 className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/85 via-black/30 to-transparent"
               />
               <div className="pointer-events-none absolute inset-0 flex items-end">
-                <div className="pointer-events-auto w-full px-6 pb-8">
+                <div className="pointer-events-auto w-full px-6 pb-5">
                   {children}
                 </div>
               </div>
