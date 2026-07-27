@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import StickyPhoto from "@/components/StickyPhoto";
 import MinistryMarquee from "@/components/MinistryMarquee";
 import Counter from "@/components/Counter";
+import PixCopyButton from "@/components/PixCopyButton";
 
 const valores = [
   {
@@ -248,6 +249,8 @@ export default function Home() {
           <button className="mt-8 rounded-full bg-[#e5192c] px-6 py-3 text-sm text-[#ffffff] transition-opacity hover:opacity-90">
             Quero Contribuir
           </button>
+
+          <PixCopyButton pixKey="42.118.366/0001-00" />
         </Section>
 
         <Section
