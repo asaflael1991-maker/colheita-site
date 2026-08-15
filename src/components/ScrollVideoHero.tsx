@@ -27,9 +27,15 @@ import { useScroll, useReducedMotion, useMotionValueEvent } from "framer-motion"
  * Com `prefers-reduced-motion`, nada disso acontece: é exibido só o
  * primeiro frame, numa seção de altura normal (sem o espaço extra de
  * rolagem nem o efeito de "grudar" na tela).
+ *
+ * No celular (telas até MOBILE_BREAKPOINT) o mesmo fallback estático é
+ * usado: baixar e desenhar 57 imagens em canvas a cada evento de scroll
+ * pesa demais pra maioria dos aparelhos e causava travamento/engasgo
+ * durante a rolagem. Em telas maiores o efeito completo continua ativo.
  */
 
 const FRAME_COUNT = 57;
+const MOBILE_BREAKPOINT = 768;
 const frameSrc = (i: number) =>
   `/videos/hero-scroll/frame-${String(i + 1).padStart(3, "0")}.jpg`;
 
@@ -40,6 +46,23 @@ export default function ScrollVideoHero() {
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const lastDrawnRef = useRef<number>(0);
   const [firstFrameReady, setFirstFrameReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== "undefined" && window.innerWidth <= MOBILE_BREAKPOINT
+  );
+
+  // Mantém `isMobile` atualizado se a janela for redimensionada ou o
+  // aparelho for rotacionado (ex.: tablet passando de retrato pra
+  // paisagem).
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
+    const onChange = (e: MediaQueryListEvent | MediaQueryList) =>
+      setIsMobile(e.matches);
+    onChange(mq);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  const skipHeavyAnimation = shouldReduceMotion || isMobile;
 
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
@@ -81,7 +104,11 @@ export default function ScrollVideoHero() {
   };
 
   // Pré-carrega todas as imagens e ajusta o tamanho do canvas.
+  // No celular/reduced-motion isso nem roda: evita baixar os ~7MB dos
+  // 57 frames à toa quando vamos mostrar só a imagem estática abaixo.
   useEffect(() => {
+    if (skipHeavyAnimation) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -109,15 +136,15 @@ export default function ScrollVideoHero() {
 
     return () => window.removeEventListener("resize", resize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [skipHeavyAnimation]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (shouldReduceMotion) return;
+    if (skipHeavyAnimation) return;
     const index = Math.round(latest * (FRAME_COUNT - 1));
     drawFrame(index);
   });
 
-  if (shouldReduceMotion) {
+  if (skipHeavyAnimation) {
     return (
       <section className="relative h-[100svh] w-full overflow-hidden bg-[#1a1408]">
         {/* eslint-disable-next-line @next/next/no-img-element */}

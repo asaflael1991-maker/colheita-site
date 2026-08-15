@@ -30,7 +30,6 @@ body {
   background: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body);
-  cursor: url("/cursor.png") 0 0, auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

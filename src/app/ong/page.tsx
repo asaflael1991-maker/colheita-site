@@ -299,7 +299,7 @@ export default function OngPage() {
             e novas oportunidades para aqueles que mais precisam.
           </p>
           <p className="text-base text-[#1d1d1b]/55">
-            Avenida Major Assis, nº 1590, bairro Jardim Guanabara,
+            Avenida Major Assis, nº 1690, bairro Jardim Guanabara,
             Fortaleza – Ceará
             <br />
             CNPJ 42.118.366/0001-00

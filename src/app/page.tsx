@@ -57,10 +57,8 @@ const tiposEventos = [
   "Conferência THE BRIDGE",
   "Retiro da Juventude",
   "Retiro de Casais",
-  "Retiro de Homens (Montanha)",
   "Conferência de Mulheres (Ellas)",
   "Festa da Colheita",
-  "Escola de Vida Ministerial",
   "Cursos de Formação",
   "Encontros de Células",
   "Campanhas de Oração e Jejum",
@@ -377,8 +375,8 @@ export default function Home() {
                 {[
                   ["Telefone", "A definir"],
                   ["WhatsApp", "A definir"],
-                  ["E-mail", "A definir"],
-                  ["Endereço", "Ministério Colheita Internacional"],
+                  ["E-mail", "assceusabertos@gmail.com"],
+                  ["Endereço", "Avenida Major Assis, nº 1690, Jardim Guanabara"],
                 ].map(([label, value]) => (
                   <div key={label}>
                     <dt className="uppercase tracking-[0.15em] text-[#1d1d1b]/45">
