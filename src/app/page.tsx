@@ -270,7 +270,7 @@ export default function Home() {
             Quero Contribuir
           </button>
 
-          <PixCopyButton pixKey="42.118.366/0001-00" />
+          <PixCopyButton pixKey="26.349.742/0001-10" />
         </Section>
 
         <StickyPhoto
@@ -375,8 +375,11 @@ export default function Home() {
                 {[
                   ["Telefone", "A definir"],
                   ["WhatsApp", "A definir"],
-                  ["E-mail", "assceusabertos@gmail.com"],
-                  ["Endereço", "Avenida Major Assis, nº 1690, Jardim Guanabara"],
+                  ["E-mail", "igcolheitadoamor@gmail.com"],
+                  [
+                    "Endereço",
+                    "Avenida Major Assis, nº 1690, Vila Velha, Fortaleza - CE, CEP 60345-632",
+                  ],
                 ].map(([label, value]) => (
                   <div key={label}>
                     <dt className="uppercase tracking-[0.15em] text-[#1d1d1b]/45">
@@ -401,7 +404,7 @@ export default function Home() {
               </div>
 
               <a
-                href="https://maps.app.goo.gl/cF3UXQkKyhtAMquR6"
+                href="https://www.google.com/maps/search/?api=1&query=Avenida+Major+Assis,+1690,+Vila+Velha,+Fortaleza+-+CE,+60345-632"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-block text-sm underline underline-offset-4 text-[#1d1d1b]/70 hover:text-[#1d1d1b]"
@@ -416,7 +419,7 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl border border-[#1d1d1b]/10">
               <iframe
                 title="Localização — Igreja Colheita"
-                src="https://www.google.com/maps?q=-22.4224735,-42.9611588&z=16&output=embed"
+                src="https://www.google.com/maps?q=Avenida+Major+Assis,+1690,+Vila+Velha,+Fortaleza+-+CE,+60345-632&z=16&output=embed"
                 width="100%"
                 height="320"
                 loading="lazy"

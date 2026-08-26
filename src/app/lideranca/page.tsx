@@ -78,6 +78,11 @@ const liderancaMinisterios = [
     lideres: "Pra. Sabrinne, Mis. Samara e Ira. Gabrielly",
     bio: "Dedica-se a promover uma cultura de oração, sensibilidade à voz do Espírito Santo e edificação da igreja.",
   },
+  {
+    ministerio: "Ministério de Comunicação",
+    lideres: "Lucas Weyne, Miguel Garcia e Clara Mariano",
+    bio: "Cuida da comunicação da Igreja Colheita dentro e fora dos cultos, produzindo arte, vídeo, fotografia e cobertura dos eventos com excelência.",
+  },
 ];
 
 export default function LiderancaPage() {
