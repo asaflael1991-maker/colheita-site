@@ -415,7 +415,7 @@ export default function Home() {
             </div>
             <div className="overflow-hidden rounded-2xl border border-[#1d1d1b]/10">
               <iframe
-                title="Localização — Ministério Colheita Internacional"
+                title="Localização — Igreja Colheita"
                 src="https://www.google.com/maps?q=-22.4224735,-42.9611588&z=16&output=embed"
                 width="100%"
                 height="320"

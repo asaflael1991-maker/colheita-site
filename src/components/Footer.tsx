@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[#1d1d1b]/10 bg-[#ffffff] px-6 py-10 lg:px-12">
       <div className="mx-auto flex max-w-[1440px] flex-col gap-6 text-sm text-[#1d1d1b]/60 lg:flex-row lg:items-center lg:justify-between">
-        <p>&copy; {new Date().getFullYear()} Ministério Colheita Internacional. Todos os direitos reservados.</p>
+        <p>&copy; {new Date().getFullYear()} Igreja Colheita. Todos os direitos reservados.</p>
 
         <div className="flex flex-wrap gap-6">
           {redes.map(({ label, href, Icon }) => (

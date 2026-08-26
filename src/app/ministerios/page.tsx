@@ -27,7 +27,7 @@ const ministerios: {
     horario: "Conforme escala ministerial e ensaios semanais",
     publico: "Músicos, cantores e instrumentistas",
     responsavel: "Ir. Emerson e Irª. Nívea",
-    rede: "@ministeriochedvar",
+    rede: "@colheita_musicoficial",
     logo: "/images/ministerios/louvor.jpg",
   },
   {
@@ -89,6 +89,19 @@ const ministerios: {
     logo: "/images/ministerios/profetico.jpg",
   },
   {
+    nome: "Ministério de Dança",
+    objetivo:
+      "Adorar a Deus através da dança, expressando louvor com o corpo e inspirando a igreja a celebrar a presença de Deus.",
+    comoFunciona:
+      "Ensaios semanais e apresentações nos cultos e eventos da igreja.",
+    horario: "Conforme escala ministerial e ensaios semanais",
+    publico: "Bailarinos e interessados em ministrar através da dança",
+    responsavel: "Ev. Samara Carneiro",
+    rede: "@ministeriochedvah",
+    // PLACEHOLDER: falta a foto/logo deste ministério — me manda uma imagem
+    // que eu coloco em /images/ministerios/danca.jpg
+  },
+  {
     nome: "Ministério de Células",
     objetivo:
       "Promover discipulado, comunhão e cuidado pastoral através dos pequenos grupos.",
@@ -96,7 +109,7 @@ const ministerios: {
       "As células se reúnem semanalmente em casas para comunhão, estudo da Palavra, oração e evangelismo.",
     horario: "Durante a semana, conforme cada célula",
     publico: "Toda a igreja",
-    responsavel: "Pr. Pedro e Pra. Jéssica",
+    responsavel: "Prs. Pedro, Jéssica e Mikaele",
     logo: "/images/ministerios/celulas.jpg",
   },
   {

@@ -19,7 +19,7 @@ const body = Inter({
 
 export const metadata: Metadata = {
   title: "Colheita — Uma família para pertencer",
-  description: "Ministério Colheita Internacional",
+  description: "Igreja Colheita",
 };
 
 export default function RootLayout({
