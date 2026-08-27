@@ -153,14 +153,14 @@ const projetosComunitarios = [
     publico: "Crianças da comunidade",
     responsavel: "Miss. Samara Carneiro",
     rede: "@ass.ceusabertos",
-    imagem: "/images/projetos/bale.svg",
+    imagem: "/images/projetos/bale.jpg",
   },
   {
     nome: "Krav Maga",
     publico: "Aberto para toda a comunidade, público unissex",
     responsavel: "Ir. Wesley e Ira. Raquel",
     rede: "@ass.ceusabertos",
-    imagem: "/images/projetos/kravmaga.svg",
+    imagem: "/images/projetos/kravmaga.jpg",
   },
 ];
 
