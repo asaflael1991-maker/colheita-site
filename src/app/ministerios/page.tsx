@@ -74,9 +74,7 @@ const ministerios: {
       "Expedições e trilhas em grupo, com momentos de oração, comunhão e desafio físico e espiritual.",
     horario: "Conforme calendário de expedições",
     publico: "Homens",
-    // PLACEHOLDER: falta confirmar o responsável e o Instagram (se
-    // tiver) desse ministério — me manda que eu preencho.
-    responsavel: "A definir",
+    responsavel: "Pr. Silvanio Pimentel",
     logo: "/images/ministerios/montanha.jpg",
   },
   {
