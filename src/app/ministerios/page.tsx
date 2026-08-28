@@ -67,17 +67,6 @@ const ministerios: {
     logo: "/images/ministerios/homens.jpg",
   },
   {
-    nome: "Ministério Montanha",
-    objetivo:
-      "Fortalecer a fé e a comunhão entre os homens através de expedições e trilhas, vivendo a caminhada cristã também fora dos muros da igreja.",
-    comoFunciona:
-      "Expedições e trilhas em grupo, com momentos de oração, comunhão e desafio físico e espiritual.",
-    horario: "Conforme calendário de expedições",
-    publico: "Homens",
-    responsavel: "Pr. Silvanio Pimentel",
-    logo: "/images/ministerios/montanha.jpg",
-  },
-  {
     nome: "Ministério de Jovens",
     objetivo: "Formar uma geração apaixonada por Jesus e comprometida com o Reino de Deus.",
     comoFunciona:
