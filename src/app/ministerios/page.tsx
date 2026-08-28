@@ -109,8 +109,7 @@ const ministerios: {
     publico: "Bailarinos e interessados em ministrar através da dança",
     responsavel: "Ev. Samara Carneiro",
     rede: "@ministeriochedvah",
-    // PLACEHOLDER: falta a foto/logo deste ministério — me manda uma imagem
-    // que eu coloco em /images/ministerios/danca.jpg
+    logo: "/images/ministerios/danca.png",
   },
   {
     nome: "Ministério de Células",
