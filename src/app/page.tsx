@@ -65,6 +65,7 @@ const tiposEventos = [
   "Batismos",
   "Santa Ceia",
   "Ações Sociais",
+  "Expedições Montanha",
 ];
 
 export default function Home() {
