@@ -91,6 +91,7 @@ const liderancaMinisterios: {
     ministerio: "Ministério de Mulheres",
     lideres: "Pra. Carinne Pimentel e time de fé",
     bio: "Dedica sua vida ao discipulado, aconselhamento e fortalecimento espiritual das mulheres, inspirando-as a viver sua identidade em Cristo.",
+    foto: "/images/lideranca/carinne.jpg",
   },
   {
     ministerio: "Ministério de Homens",
@@ -107,6 +108,7 @@ const liderancaMinisterios: {
     ministerio: "Ministério Profético",
     lideres: "Pra. Sabrinne, Mis. Samara e Ira. Gabrielly",
     bio: "Dedica-se a promover uma cultura de oração, sensibilidade à voz do Espírito Santo e edificação da igreja.",
+    foto: "/images/lideranca/sabrinne.jpg",
   },
   {
     ministerio: "Ministério de Comunicação",
