@@ -25,14 +25,9 @@ const pastoresPrincipais = [
 
 const equipePastoral: { nome: string; foto?: string; bio: string }[] = [
   {
-    nome: "Pra. Sabrinne",
+    nome: "Pr. Daniel e Pra. Sabrinne",
     foto: "/images/lideranca/daniel-sabrinne.jpg",
-    bio: "Pastora que serve com sensibilidade, compromisso e amor ao Reino de Deus, contribuindo para o desenvolvimento espiritual da igreja e para a formação de discípulos que vivam os princípios do Evangelho.",
-  },
-  {
-    nome: "Pr. Daniel",
-    foto: "/images/lideranca/daniel-sabrinne.jpg",
-    bio: "Pastor comprometido com o discipulado e o fortalecimento da Igreja Colheita, servindo com dedicação na formação de líderes e no cuidado pastoral.",
+    bio: "Pastores que servem com sensibilidade, compromisso e amor ao Reino de Deus, contribuindo para o discipulado, a formação de líderes e o desenvolvimento espiritual da Igreja Colheita.",
   },
   {
     nome: "Pr. Fabiano",
@@ -49,14 +44,9 @@ const equipePastoral: { nome: string; foto?: string; bio: string }[] = [
     bio: "Pastor apaixonado pelo discipulado e pelo desenvolvimento de novos líderes, servindo com excelência e compromisso com o Reino de Deus.",
   },
   {
-    nome: "Pr. Gabriel",
+    nome: "Pr. Gabriel e Pra. Celeste",
     foto: "/images/lideranca/gabriel-celeste.jpg",
-    bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
-  },
-  {
-    nome: "Pra. Celeste",
-    foto: "/images/lideranca/gabriel-celeste.jpg",
-    bio: "Pastora que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+    bio: "Pastores que servem com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
     nome: "Pr. Gleuson",
@@ -64,24 +54,14 @@ const equipePastoral: { nome: string; foto?: string; bio: string }[] = [
     bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
-    nome: "Pr. Leonardo",
+    nome: "Pr. Leonardo e Pra. Suiane",
     foto: "/images/lideranca/leonardo-suiane.jpg",
-    bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+    bio: "Pastores que servem com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
-    nome: "Pra. Suiane",
-    foto: "/images/lideranca/leonardo-suiane.jpg",
-    bio: "Pastora que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
-  },
-  {
-    nome: "Pr. Nildo",
+    nome: "Pr. Nildo e Pra. Fernanda",
     foto: "/images/lideranca/nildo-fernanda.jpg",
-    bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
-  },
-  {
-    nome: "Pra. Fernanda",
-    foto: "/images/lideranca/nildo-fernanda.jpg",
-    bio: "Pastora que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+    bio: "Pastores que servem com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
     nome: "Pr. Rafael Olegário",
