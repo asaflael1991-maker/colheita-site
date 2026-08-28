@@ -42,6 +42,11 @@ const albuns: { slug: string; titulo: string; fotos: string[] }[] = [
     titulo: "Mercado Solidário",
     fotos: Array.from({ length: 2 }, (_, i) => `foto-${String(i + 1).padStart(2, "0")}.jpg`),
   },
+  {
+    slug: "montanha",
+    titulo: "Montanha",
+    fotos: Array.from({ length: 7 }, (_, i) => `foto-${String(i + 1).padStart(2, "0")}.jpg`),
+  },
 ];
 
 export default function GaleriaPage() {
