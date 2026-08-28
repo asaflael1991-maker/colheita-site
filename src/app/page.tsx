@@ -372,7 +372,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 text-sm">
+              <dl className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 text-sm sm:grid-cols-2">
                 {[
                   ["Telefone", "A definir"],
                   ["WhatsApp", "A definir"],
@@ -386,7 +386,9 @@ export default function Home() {
                     <dt className="uppercase tracking-[0.15em] text-[#1d1d1b]/45">
                       {label}
                     </dt>
-                    <dd className="mt-1 text-[#1d1d1b]/80">{value}</dd>
+                    <dd className="mt-1 break-words text-[#1d1d1b]/80">
+                      {value}
+                    </dd>
                   </div>
                 ))}
               </dl>
