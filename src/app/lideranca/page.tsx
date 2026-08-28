@@ -48,6 +48,51 @@ const equipePastoral: { nome: string; foto?: string; bio: string }[] = [
     foto: "/images/lideranca/helandson-mikaele.jpg",
     bio: "Pastor apaixonado pelo discipulado e pelo desenvolvimento de novos líderes, servindo com excelência e compromisso com o Reino de Deus.",
   },
+  {
+    nome: "Pr. Gabriel",
+    foto: "/images/lideranca/gabriel-celeste.jpg",
+    bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
+  {
+    nome: "Pra. Celeste",
+    foto: "/images/lideranca/gabriel-celeste.jpg",
+    bio: "Pastora que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
+  {
+    nome: "Pr. Gleuson",
+    foto: "/images/lideranca/gleuson.jpg",
+    bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
+  {
+    nome: "Pr. Leonardo",
+    foto: "/images/lideranca/leonardo-suiane.jpg",
+    bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
+  {
+    nome: "Pra. Suiane",
+    foto: "/images/lideranca/leonardo-suiane.jpg",
+    bio: "Pastora que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
+  {
+    nome: "Pr. Nildo",
+    foto: "/images/lideranca/nildo-fernanda.jpg",
+    bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
+  {
+    nome: "Pra. Fernanda",
+    foto: "/images/lideranca/nildo-fernanda.jpg",
+    bio: "Pastora que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
+  {
+    nome: "Pr. Rafael Olegário",
+    foto: "/images/lideranca/rafael-olegario.jpg",
+    bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
+  {
+    nome: "Pra. Rebeca",
+    foto: "/images/lideranca/rebeca.jpg",
+    bio: "Pastora que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
 ];
 
 const liderancaMinisterios: {
