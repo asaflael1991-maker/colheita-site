@@ -35,10 +35,6 @@ const equipePastoral: { nome: string; foto?: string; bio: string }[] = [
     bio: "Pastor que atua no cuidado da igreja, contribuindo para o crescimento espiritual dos membros e o desenvolvimento dos ministérios.",
   },
   {
-    nome: "Pr. Victor",
-    bio: "Pastor dedicado ao ensino da Palavra e ao acompanhamento de pessoas, auxiliando no fortalecimento da visão da Igreja Colheita.",
-  },
-  {
     nome: "Pr. Helandson",
     foto: "/images/lideranca/helandson-mikaele.jpg",
     bio: "Pastor apaixonado pelo discipulado e pelo desenvolvimento de novos líderes, servindo com excelência e compromisso com o Reino de Deus.",
