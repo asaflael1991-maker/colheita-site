@@ -277,8 +277,8 @@ export default function Home() {
         <StickyPhoto
           src="/images/doacoes/mercado.jpg"
           alt="Voluntários organizando doações de alimentos no Mercado Solidário da Igreja Colheita"
-          imageWidth={1920}
-          imageHeight={1071}
+          imageWidth={2048}
+          imageHeight={1143}
         />
 
         <Section
