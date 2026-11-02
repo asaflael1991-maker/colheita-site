@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  // Página de vendas do devocional "Jesus, Senhor de Tudo".
+  // São páginas HTML estáticas em public/devocional/, servidas em URLs limpas.
+  async rewrites() {
+    return [
+      { source: "/devocional", destination: "/devocional/index.html" },
+      { source: "/devocional/obrigado", destination: "/devocional/obrigado.html" },
+    ];
+  },
 };
 
 export default nextConfig;
