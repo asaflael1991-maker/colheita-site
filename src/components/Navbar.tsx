@@ -34,14 +34,40 @@ const sections = [
   { id: "contato", label: "Contato" },
 ];
 
-const pages = [
+// `staticPage: true` = página HTML estática em public/ (fora do app Next),
+// por isso usa <a> comum em vez de <Link> (navegação completa).
+const pages: { href: string; label: string; staticPage?: boolean }[] = [
   { href: "/historia", label: "História" },
   { href: "/lideranca", label: "Liderança" },
   { href: "/ministerios", label: "Ministérios" },
   { href: "/ong", label: "Céus Abertos" },
   { href: "/galeria", label: "Galeria" },
   { href: "/blog", label: "Notícias" },
+  { href: "/devocional", label: "Devocional", staticPage: true },
 ];
+
+function NavLink({
+  page,
+  className,
+  onClick,
+}: {
+  page: (typeof pages)[number];
+  className: string;
+  onClick?: () => void;
+}) {
+  if (page.staticPage) {
+    return (
+      <a href={page.href} onClick={onClick} className={className}>
+        {page.label}
+      </a>
+    );
+  }
+  return (
+    <Link href={page.href} onClick={onClick} className={className}>
+      {page.label}
+    </Link>
+  );
+}
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -107,12 +133,10 @@ export default function Navbar() {
         <ul className="mx-auto flex max-w-[1440px] items-center justify-center gap-6 px-6 py-2 lg:px-12">
           {pages.map((p) => (
             <li key={p.href}>
-              <Link
-                href={p.href}
+              <NavLink
+                page={p}
                 className="text-sm text-[#1d1d1b]/70 transition-colors hover:text-[#1d1d1b]"
-              >
-                {p.label}
-              </Link>
+              />
             </li>
           ))}
           <li>
@@ -143,13 +167,11 @@ export default function Navbar() {
           <li className="my-2 border-t border-[#1d1d1b]/10" />
           {pages.map((p) => (
             <li key={p.href}>
-              <Link
-                href={p.href}
+              <NavLink
+                page={p}
                 onClick={() => setOpen(false)}
                 className="block py-2 text-sm text-[#1d1d1b]/80"
-              >
-                {p.label}
-              </Link>
+              />
             </li>
           ))}
         </ul>
