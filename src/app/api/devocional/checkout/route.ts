@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
  * POST /api/devocional/checkout
  *
  * Cria um link de pagamento avulso no Checkout Integrado da InfinitePay
- * para o devocional "Jesus, Senhor de Tudo" e devolve { checkoutUrl }.
+ * para o plano anual do devocional "Jesus, Senhor de Tudo" e devolve { checkoutUrl }.
  * Depois de pagar, a InfinitePay leva o comprador para
  * /devocional/obrigado (página de download do livro).
  *
@@ -20,8 +20,10 @@ const API_URL = "https://api.checkout.infinitepay.io/links";
 const HANDLE = process.env.INFINITEPAY_HANDLE || "use-lighthouse";
 const API_KEY = process.env.INFINITEPAY_API_KEY || "";
 
+// Só o plano anual passa por aqui. O mensal é assinatura recorrente
+// (link de "Planos e Recorrência" da InfinitePay, direto na página),
+// porque o Checkout Integrado não faz cobrança recorrente.
 const PLANS = {
-  mensal: { price: 1000, description: "Devocional Jesus, Senhor de Tudo — Acesso Mensal" },
   anual: { price: 3999, description: "Devocional Jesus, Senhor de Tudo — Acesso Anual" },
 } as const;
 

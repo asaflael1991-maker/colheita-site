@@ -204,6 +204,9 @@ form{display:grid;gap:22px}
 .status h4{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--gold-hi);margin-bottom:6px}
 .status p{color:var(--muted);font-size:.92rem}
 .status.error{border-color:#e07a6a;background:rgba(224,122,106,.07)}
+.status-actions{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.status-actions[hidden]{display:none}
+.status-actions .btn{width:100%;white-space:normal;text-align:center}
 .status.error h4{color:#f0a597}
 @media (max-width:900px){.form-grid{grid-template-columns:1fr}.summary{position:static;order:-1}}
 
@@ -391,7 +394,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--ink
         <ul>
           <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Acesso digital ao devocional conforme as condições da assinatura.</li>
           <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Área para download do material.</li>
-          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Pagamento único via Pix ou cartão.</li>
+          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Cobrança mensal automática pela InfinitePay.</li>
         </ul>
         <button class="btn btn-ghost" data-plan="mensal">Escolher plano mensal</button>
       </article>
@@ -452,7 +455,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--ink
           <p class="msg">É necessário aceitar para continuar.</p>
         </div>
         <button type="submit" class="btn btn-gold" id="submitBtn">Continuar para pagamento</button>
-        <div class="status" id="status" role="status" aria-live="polite"><h4></h4><p></p></div>
+        <div class="status" id="status" role="status" aria-live="polite"><h4></h4><p></p><div class="status-actions" id="statusActions" hidden></div></div>
       </form>
 
       <aside class="summary" aria-label="Resumo do pedido">
@@ -479,7 +482,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--ink
     </div>
     <div class="faq rv">
       <details><summary>O devocional é digital?</summary><p>Sim. O material será disponibilizado em formato digital.</p></details>
-      <details><summary>Como receberei meu devocional?</summary><p>Logo após pagar, toque em "Continuar" na tela de pagamento: você é levado à página de download e pode baixar o livro na hora.</p></details>
+      <details><summary>Como receberei meu devocional?</summary><p>No plano anual, logo após pagar toque em "Continuar" na tela de pagamento: você é levado à página de download. No plano mensal, a assinatura abre em outra aba; depois de assinar, volte a esta página e toque em "Já paguei, baixar meu devocional".</p></details>
       <details><summary>Quais são as formas de pagamento?</summary><p>As opções disponíveis aparecem na tela de pagamento seguro, ao finalizar a compra.</p></details>
       <details><summary>Qual é a diferença entre os planos?</summary><p>O plano mensal custa R$ 10,00 e o anual custa R$ 39,99. As condições de acesso seguirão o período contratado.</p></details>
       <details><summary>Preciso imprimir o material?</summary><p>Não. Você poderá realizar a leitura digitalmente.</p></details>
@@ -540,9 +543,10 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--ink
 <script>
 /* ===== CONFIGURAÇÃO (preencher quando a igreja/gateway informarem) ===== */
 const CONFIG = {
-  ORDER_ENDPOINT: "/api/devocional/checkout", // cria a cobrança na InfinitePay (volta para /devocional/obrigado após pagar)
+  ORDER_ENDPOINT: "/api/devocional/checkout", // plano anual: cria a cobrança única na InfinitePay (volta para /devocional/obrigado após pagar)
+  DOWNLOAD_PAGE: "/devocional/obrigado",
   PAYMENT_ENABLED: true,
-  PAYMENT_LINKS: {                // reserva: usados só se a criação da cobrança falhar (não redirecionam ao livro)
+  PAYMENT_LINKS: {                // mensal: assinatura recorrente (abre em nova aba + botão "Já paguei"); anual: reserva se a cobrança falhar
     anual: "https://payment-link-v3.ton.com.br/pl_QLvVp7kGRm9azPCWLHZWlob5WwzYZqP6",  // Ton
     mensal: "https://invoice.infinitepay.io/plans/use-lighthouse/bGP5v8HOUk"           // InfinitePay
   },
@@ -598,7 +602,9 @@ w.addEventListener('input',()=>{
 
 /* validação + envio */
 const form=document.getElementById('orderForm'), statusBox=document.getElementById('status');
-function showStatus(type,t,m){statusBox.className='status show'+(type==='error'?' error':'');statusBox.querySelector('h4').textContent=t;statusBox.querySelector('p').textContent=m}
+function showStatus(type,t,m){statusBox.className='status show'+(type==='error'?' error':'');statusBox.querySelector('h4').textContent=t;statusBox.querySelector('p').textContent=m;statusActions.hidden=true;statusActions.replaceChildren()}
+const statusActions=document.getElementById('statusActions');
+function addAction(label,href,cls,newTab){const a=document.createElement('a');a.className='btn '+cls;a.href=href;a.textContent=label;if(newTab){a.target='_blank';a.rel='noopener'}statusActions.appendChild(a);statusActions.hidden=false;return a}
 form.addEventListener('submit',async e=>{
   e.preventDefault();
   const v={
@@ -616,6 +622,21 @@ form.addEventListener('submit',async e=>{
   for(const id in checks){document.getElementById(id).classList.toggle('err',!checks[id]); if(!checks[id]) ok=false}
   if(!ok){showStatus('error','Confira os campos destacados','Alguns dados precisam ser corrigidos para continuar.');return}
   if(v.website) return; // honeypot anti-spam
+
+  /* Plano mensal: assinatura recorrente da InfinitePay. Esse link não volta
+     sozinho para o site, então abre em nova aba e esta página mostra o
+     botão "Já paguei" que leva ao download. */
+  if(v.plano==='mensal' && CONFIG.PAYMENT_LINKS.mensal){
+    const tab=window.open(CONFIG.PAYMENT_LINKS.mensal,'_blank');
+    if(tab) try{tab.opener=null}catch(e){}
+    showStatus('info', tab ? 'Assinatura aberta em outra aba ✓' : 'Falta só a assinatura',
+      tab ? 'Conclua a assinatura na aba da InfinitePay. Depois volte aqui e toque no botão abaixo para baixar o devocional.'
+          : 'Toque em "Assinar agora" para abrir o pagamento. Depois de concluir, volte aqui e toque em "Já paguei".');
+    if(!tab) addAction('Assinar agora',CONFIG.PAYMENT_LINKS.mensal,'btn-ghost',true);
+    addAction('Já paguei, baixar meu devocional',CONFIG.DOWNLOAD_PAGE,'btn-gold',false);
+    statusBox.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
 
   const btn=document.getElementById('submitBtn'); btn.disabled=true; btn.textContent='Enviando…';
   try{
