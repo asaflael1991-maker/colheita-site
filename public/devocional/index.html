@@ -391,7 +391,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--ink
         <ul>
           <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Acesso digital ao devocional conforme as condições da assinatura.</li>
           <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Área para download do material.</li>
-          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Pagamento recorrente mensal, sujeito à confirmação da plataforma de pagamento.</li>
+          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Pagamento único via Pix ou cartão.</li>
         </ul>
         <button class="btn btn-ghost" data-plan="mensal">Escolher plano mensal</button>
       </article>
@@ -479,7 +479,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--ink
     </div>
     <div class="faq rv">
       <details><summary>O devocional é digital?</summary><p>Sim. O material será disponibilizado em formato digital.</p></details>
-      <details><summary>Como receberei meu devocional?</summary><p>Logo após pagar, você é levado à página de download e pode baixar o livro na hora.</p></details>
+      <details><summary>Como receberei meu devocional?</summary><p>Logo após pagar, toque em "Continuar" na tela de pagamento: você é levado à página de download e pode baixar o livro na hora.</p></details>
       <details><summary>Quais são as formas de pagamento?</summary><p>As opções disponíveis aparecem na tela de pagamento seguro, ao finalizar a compra.</p></details>
       <details><summary>Qual é a diferença entre os planos?</summary><p>O plano mensal custa R$ 10,00 e o anual custa R$ 39,99. As condições de acesso seguirão o período contratado.</p></details>
       <details><summary>Preciso imprimir o material?</summary><p>Não. Você poderá realizar a leitura digitalmente.</p></details>
@@ -540,9 +540,9 @@ footer{border-top:1px solid var(--line);padding:70px 0 40px;background:var(--ink
 <script>
 /* ===== CONFIGURAÇÃO (preencher quando a igreja/gateway informarem) ===== */
 const CONFIG = {
-  ORDER_ENDPOINT: "",            // ex.: "/api/orders" — backend registra o pedido e avisa CHURCH_NOTIFICATION_EMAIL
+  ORDER_ENDPOINT: "/api/devocional/checkout", // cria a cobrança na InfinitePay (volta para /devocional/obrigado após pagar)
   PAYMENT_ENABLED: true,
-  PAYMENT_LINKS: {                // link de pagamento de cada plano
+  PAYMENT_LINKS: {                // reserva: usados só se a criação da cobrança falhar (não redirecionam ao livro)
     anual: "https://payment-link-v3.ton.com.br/pl_QLvVp7kGRm9azPCWLHZWlob5WwzYZqP6",  // Ton
     mensal: "https://invoice.infinitepay.io/plans/use-lighthouse/bGP5v8HOUk"           // InfinitePay
   },
@@ -632,10 +632,15 @@ form.addEventListener('submit',async e=>{
     const r=await fetch(CONFIG.ORDER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(v)});
     if(!r.ok) throw new Error();
     const data=await r.json(); // backend devolve { status:"aguardando_pagamento", checkoutUrl }
-    if(CONFIG.PAYMENT_ENABLED && data.checkoutUrl){ location.href=data.checkoutUrl; return }
+    if(CONFIG.PAYMENT_ENABLED && data.checkoutUrl){
+      showStatus('info','Tudo certo ✓','Estamos levando você para o pagamento seguro. Depois de pagar, toque em "Continuar" para ir à página de download.');
+      location.href=data.checkoutUrl; return
+    }
     showStatus('info','Cadastro recebido ✓','Recebemos seus dados. Em breve você receberá as instruções de pagamento por e-mail.');
     form.reset(); setPlan('anual');
   }catch(err){
+    const fallback=CONFIG.PAYMENT_ENABLED && CONFIG.PAYMENT_LINKS[v.plano];
+    if(fallback){ location.href=fallback; return }
     showStatus('error','Não foi possível enviar','Verifique sua conexão e tente novamente. Se o problema continuar, escreva para igcolheitadoamor@gmail.com.');
   }finally{setTimeout(()=>{btn.disabled=false;btn.textContent='Continuar para pagamento'},1500)}
 });
