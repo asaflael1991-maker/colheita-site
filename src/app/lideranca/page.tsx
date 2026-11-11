@@ -12,13 +12,13 @@ const pastoresPrincipais = [
   {
     nome: "Pr. Silvanio Pimentel",
     cargo: "Pastor Presidente",
-    foto: "/images/lideranca/silvanio.jpg",
+    foto: "/images/lideranca/silvanio-2026.jpg",
     bio: "Fundador e Pastor Presidente da Igreja Colheita, dedica sua vida à proclamação do Evangelho, ao discipulado e à formação de líderes. É apaixonado por ensinar a Palavra de Deus de forma simples, prática e transformadora, conduzindo a igreja com a visão de formar discípulos, fortalecer famílias e alcançar pessoas para Cristo. Seu propósito é ver cada cristão descobrir seu chamado e viver uma vida de serviço ao Reino de Deus.",
   },
   {
     nome: "Pra. Carinne Pimentel",
     cargo: "Pastora",
-    foto: "/images/lideranca/carinne.jpg",
+    foto: "/images/lideranca/carinne-2026.jpg",
     bio: "Pastora e cofundadora da Igreja Colheita, exerce um ministério voltado ao cuidado das pessoas, especialmente das mulheres e das famílias. Atua no discipulado, aconselhamento e desenvolvimento espiritual, servindo com sensibilidade, amor e dedicação. Sua missão é fortalecer mulheres para que vivam plenamente o propósito de Deus.",
   },
 ];
@@ -26,12 +26,12 @@ const pastoresPrincipais = [
 const equipePastoral: { nome: string; foto?: string; bio: string }[] = [
   {
     nome: "Pr. Daniel e Pra. Sabrinne",
-    foto: "/images/lideranca/daniel-sabrinne.jpg",
+    foto: "/images/lideranca/daniel-sabrinne-2026.jpg",
     bio: "Pastores que servem com sensibilidade, compromisso e amor ao Reino de Deus, contribuindo para o discipulado, a formação de líderes e o desenvolvimento espiritual da Igreja Colheita.",
   },
   {
     nome: "Pr. Fabiano",
-    foto: "/images/lideranca/fabiano.jpg",
+    foto: "/images/lideranca/fabiano-2026.jpg",
     bio: "Pastor que atua no cuidado da igreja, contribuindo para o crescimento espiritual dos membros e o desenvolvimento dos ministérios.",
   },
   {
@@ -41,32 +41,32 @@ const equipePastoral: { nome: string; foto?: string; bio: string }[] = [
   },
   {
     nome: "Pr. Gabriel e Pra. Celeste",
-    foto: "/images/lideranca/gabriel-celeste.jpg",
+    foto: "/images/lideranca/gabriel-celeste-2026.jpg",
     bio: "Pastores que servem com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
     nome: "Pr. Gleuson",
-    foto: "/images/lideranca/gleuson.jpg",
+    foto: "/images/lideranca/gleuson-2026.jpg",
     bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
     nome: "Pr. Leonardo e Pra. Suiane",
-    foto: "/images/lideranca/leonardo-suiane.jpg",
+    foto: "/images/lideranca/leonardo-suiane-2026.jpg",
     bio: "Pastores que servem com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
     nome: "Pr. Nildo e Pra. Fernanda",
-    foto: "/images/lideranca/nildo-fernanda.jpg",
+    foto: "/images/lideranca/nildo-fernanda-2026.jpg",
     bio: "Pastores que servem com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
     nome: "Pr. Rafael Olegário",
-    foto: "/images/lideranca/rafael-olegario.jpg",
+    foto: "/images/lideranca/rafael-olegario-2026.jpg",
     bio: "Pastor que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
   {
     nome: "Pra. Rebeca",
-    foto: "/images/lideranca/rebeca.jpg",
+    foto: "/images/lideranca/rebeca-2026.jpg",
     bio: "Pastora que serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
 ];
@@ -91,7 +91,7 @@ const liderancaMinisterios: {
     ministerio: "Ministério de Mulheres",
     lideres: "Pra. Carinne Pimentel e time de fé",
     bio: "Dedica sua vida ao discipulado, aconselhamento e fortalecimento espiritual das mulheres, inspirando-as a viver sua identidade em Cristo.",
-    foto: "/images/lideranca/carinne.jpg",
+    foto: "/images/lideranca/carinne-2026.jpg",
   },
   {
     ministerio: "Ministério de Homens",
@@ -118,6 +118,7 @@ const liderancaMinisterios: {
   {
     ministerio: "Ministério de Células",
     lideres: "Mikaele",
+    foto: "/images/lideranca/mikaele.jpg",
     bio: "Coordena as células da Igreja Colheita, cuidando do discipulado, da comunhão e do acompanhamento espiritual dos pequenos grupos que se reúnem durante a semana.",
   },
 ];
