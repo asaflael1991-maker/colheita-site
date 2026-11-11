@@ -108,7 +108,7 @@ const ministerios: {
       "As células se reúnem semanalmente em casas para comunhão, estudo da Palavra, oração e evangelismo.",
     horario: "Durante a semana, conforme cada célula",
     publico: "Toda a igreja",
-    responsavel: "Prs. Pedro, Jéssica e Mikaele",
+    responsavel: "Mikaele",
     logo: "/images/ministerios/celulas.jpg",
   },
   {

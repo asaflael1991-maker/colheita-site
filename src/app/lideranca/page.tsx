@@ -117,9 +117,8 @@ const liderancaMinisterios: {
   },
   {
     ministerio: "Ministério de Células",
-    lideres: "Prs. Pedro, Jéssica e Mikaele",
-    bio: "Coordenam as células da Igreja Colheita, cuidando do discipulado, da comunhão e do acompanhamento espiritual dos pequenos grupos que se reúnem durante a semana.",
-    foto: "/images/lideranca/pedro-jessica.jpg",
+    lideres: "Mikaele",
+    bio: "Coordena as células da Igreja Colheita, cuidando do discipulado, da comunhão e do acompanhamento espiritual dos pequenos grupos que se reúnem durante a semana.",
   },
 ];
 
