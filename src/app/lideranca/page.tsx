@@ -74,6 +74,11 @@ const equipePastoral: { nome: string; foto?: string; bio: string }[] = [
     foto: "/images/lideranca/rebeca-2026.jpg",
     bio: "Serve com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
   },
+  {
+    nome: "Irs. Roniel e Carmeline",
+    foto: "/images/lideranca/roniel-carmeline-2026.jpg",
+    bio: "Servem com dedicação e compromisso ao Reino de Deus, contribuindo para o crescimento espiritual e o discipulado na Igreja Colheita.",
+  },
 ];
 
 export default function LiderancaPage() {
