@@ -91,7 +91,7 @@ export default function LiderancaPage() {
         </FadeInView>
 
         <h2 className="mb-8 text-sm uppercase tracking-[0.2em] text-[#1d1d1b]/50">
-          Pastores principais
+          Pastores presidentes
         </h2>
         <div className="mb-16 grid gap-10 md:grid-cols-2">
           {pastoresPrincipais.map((p, i) => (
