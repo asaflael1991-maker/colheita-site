@@ -7,6 +7,8 @@ import StickyPhoto from "@/components/StickyPhoto";
 import MinistryMarquee from "@/components/MinistryMarquee";
 import Counter from "@/components/Counter";
 import PixCopyButton from "@/components/PixCopyButton";
+import AgendaEventos from "@/components/AgendaEventos";
+import { eventos } from "@/content/eventos";
 
 const valores = [
   {
@@ -334,22 +336,7 @@ export default function Home() {
           <p className="mt-8 max-w-2xl text-[#1d1d1b]/70">
             Confira nossa agenda e participe conosco.
           </p>
-          <button className="mt-6 rounded-full bg-[#e5192c] px-6 py-3 text-sm text-[#ffffff] transition-opacity hover:opacity-90">
-            Ver Agenda
-          </button>
-
-          {/* TODO: substituir pelo link real do Google Agenda. Como pegar:
-              Google Agenda (no navegador) → engrenagem → Configurações →
-              clica na sua agenda na lista à esquerda → "Integrar agenda" →
-              copia a URL do campo "Link de incorporação" (começa com
-              https://calendar.google.com/calendar/embed?src=...) e cola
-              no `src` do iframe abaixo. */}
-          <div className="mt-10 flex aspect-video w-full items-center justify-center rounded-2xl border border-dashed border-[#1d1d1b]/20 bg-[#1d1d1b]/[0.02]">
-            <p className="max-w-sm px-6 text-center text-sm text-[#1d1d1b]/40">
-              Calendário do Google Agenda entra aqui — me manda o link de
-              incorporação da sua agenda que eu configuro.
-            </p>
-          </div>
+          <AgendaEventos eventos={eventos} />
         </Section>
 
         <MinistryMarquee />
